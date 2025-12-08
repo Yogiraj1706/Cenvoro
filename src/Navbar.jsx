@@ -8,17 +8,16 @@ export default function Navbar() {
     <nav className="navbar" style={{ fontFamily: '"Segoe UI", sans-serif' }}>
 
       <div className="nav-left" style={{ display: "flex", alignItems: "center" }}>
-  <img
-    src="/src/Images/Logo.png"
-    alt="CENVORO Logo"
-    style={{
-      height: "70px",
-      width: "auto",
-      paddingRight:"15px",
-    }}
-  />
-  <a href="/">CENVORO</a>
-</div>
+        <img
+          src="/LOGO.png"
+          alt="CENVORO Logo"
+          style={{
+            height: "45px",
+            width: "auto",
+          }}
+        />
+        <a href="/">CENVORO</a>
+      </div>
 
       {/* Hamburger Icon */}
       <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>

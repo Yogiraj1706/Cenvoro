@@ -3,24 +3,64 @@ import { useEffect } from "react";
 
 function Services() {
   const [activeService, setActiveService] = useState(null);
+ useEffect(() => {
+  const timer = setTimeout(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    document.querySelectorAll(".service-card").forEach(card => {
+      observer.observe(card);
+    });
+  }, 100); // give time for DOM to update
+
+  return () => clearTimeout(timer);
+}, [activeService]);
+
   useEffect(() => {
+  const el = document.querySelector(`#${activeService}-detail`);
+  if (el) {
+    setTimeout(() => {
+      el.classList.add("show");
+    }, 10);
+  }
+
+  // remove animation class when closing
+  return () => {
+    const all = document.querySelectorAll(".service-detail");
+    all.forEach(div => div.classList.remove("show"));
+  };
+}, [activeService]);
+
+
+  useEffect(() => {
+  const items = document.querySelectorAll(".benefits-list li");
+
   const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
+    (entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("animate");
+          entry.target.classList.add("visible");
         }
       });
     },
-    { threshold: 0.3 }
+    { threshold: 0.2 }
   );
 
-  document.querySelectorAll(".service-card").forEach(card => {
-    observer.observe(card);
+  items.forEach((item) => {
+    item.classList.add("fade-on-scroll"); // initial hidden state
+    observer.observe(item);
   });
-
-  return () => observer.disconnect();
 }, []);
+
+
 
 
   return (

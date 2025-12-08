@@ -36,7 +36,7 @@ function Footer() {
             <div className="social-icons">
               <a href="#"><i className="fab fa-facebook-f"></i></a>
               <a href="#"><i className="fab fa-twitter"></i></a>
-              <a href="#"><i className="fab fa-linkedin-in"></i></a>
+              <a href="https://www.linkedin.com/company/cenvoro/"><i className="fab fa-linkedin-in"></i></a>
               <a href="#"><i className="fab fa-instagram"></i></a>
             </div>
           </div>

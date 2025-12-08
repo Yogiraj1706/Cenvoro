@@ -1,5 +1,6 @@
 import Navbar from "./Navbar";
 import Home from "./Pages/Home";
+import About from "./Pages/About"
 import Services from "./Pages/Services";
 import Contact from "./Pages/Contact";
 import Footer from "./Pages/Footer";
@@ -15,6 +16,7 @@ function App() {
       {/* Space below navbar */}
       <div style={{ marginTop: "70px" }}>
         <Home />
+        <About/>
         <Services />
         <Contact />
       </div>
