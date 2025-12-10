@@ -1,6 +1,5 @@
 body, html {
   margin: 0;
-
 }
 
 /* Center navigation menu */
@@ -984,6 +983,68 @@ textarea.form-control {
   }
 }
 
+
+/* ------------- Force wider contact form on small screens ------------- */
+@media (max-width: 768px) {
+  /* Ensure the form wrapper itself can grow */
+  .contact-form {
+    width: calc(100% - 32px) !important; /* leaves 16px margin each side */
+    max-width: none !important;
+    box-sizing: border-box !important;
+    padding: 20px !important;
+    margin: 12px auto !important;
+    flex: 0 0 100% !important; /* if inside flex */
+    min-width: 0 !important;
+  }
+
+  /* If it's inside Bootstrap columns, force it to occupy the full column */
+  .contact-form,
+  .contact-form * {
+    max-width: none !important;
+  }
+
+  /* If the form is inside .col- or .container that limits width, override */
+  .contact-form-container,
+  .contact-right,
+  .contact-column,
+  .contact-wrap,
+  .contact-section .contact-form {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Make inputs and textarea full width */
+  .contact-form .form-group,
+  .contact-form .form-control,
+  .contact-form input,
+  .contact-form textarea,{
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* If parent uses grid, make form span full columns */
+  .contact-form {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+/* Extra aggressive override for very stubborn setups (keep at bottom) */
+@media (max-width: 768px) {
+  /* Targets common Bootstrap column classes that might wrap the form */
+  .col-xs-12 .contact-form,
+  .col-sm-12 .contact-form,
+  .col-md-12 .contact-form,
+  .row > .col-6 .contact-form,
+  .row > .col-4 .contact-form {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+}
+
+
 /*****************************************************************************************************************/
 
 
@@ -1034,7 +1095,7 @@ footer {
 .footer-links {
   list-style: none;
   padding: 0;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .footer-links li {
@@ -1044,7 +1105,8 @@ footer {
 .footer-links a {
   text-decoration: none;
   color: #ffffffd9;
-  font-size: 17px;
+  font-size: 16px;
+  font-weight: 400;
   transition: 0.3s ease;
 }
 
@@ -1175,11 +1237,13 @@ footer p {
   }
 }
 
+
+
 /* Mobile */
 @media (max-width: 768px) {
   .navbar {
     height: auto;
-    padding: 10px 20px;
+    padding: 14px 20px;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -2201,3 +2265,21 @@ footer p {
     margin-right: 12px;
   }
 }
+
+
+.mission-list li {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.mission-list li.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mission-list li:nth-child(1) { transition-delay: 0.1s; }
+.mission-list li:nth-child(2) { transition-delay: 0.25s; }
+.mission-list li:nth-child(3) { transition-delay: 0.4s; }
+
+

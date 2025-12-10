@@ -3,6 +3,24 @@ import React, { useEffect } from "react";
 function About() {
 
   useEffect(() => {
+  const items = document.querySelectorAll(".mission-list li");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  items.forEach((item) => observer.observe(item));
+}, []);
+
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
