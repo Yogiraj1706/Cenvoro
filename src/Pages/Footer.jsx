@@ -2,45 +2,45 @@ import React, { useEffect } from "react";
 
 function Footer() {
 
-    useEffect(() => {
-  const columns = document.querySelectorAll(".footer-column");
+  useEffect(() => {
+    const columns = document.querySelectorAll(".footer-column");
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate");
-        }
-      });
-    },
-    { threshold: 0.3 }
-  );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
 
-  columns.forEach((col) => observer.observe(col));
-}, []);
+    columns.forEach((col) => observer.observe(col));
+  }, []);
 
 
-useEffect(() => {
-  const footerLeft = document.querySelector(".footer-left"); // select your container
+  useEffect(() => {
+    const footerLeft = document.querySelector(".footer-left"); // select your container
 
-  if (!footerLeft) return; // prevent error if element not found
+    if (!footerLeft) return; // prevent error if element not found
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate");
-        }
-      });
-    },
-    { threshold: 0.3 } // 30% visible triggers
-  );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+          }
+        });
+      },
+      { threshold: 0.3 } // 30% visible triggers
+    );
 
-  observer.observe(footerLeft);
+    observer.observe(footerLeft);
 
-  // Cleanup
-  return () => observer.unobserve(footerLeft);
-}, []);
+    // Cleanup
+    return () => observer.unobserve(footerLeft);
+  }, []);
 
 
 
@@ -92,19 +92,38 @@ useEffect(() => {
           <div className="footer-column">
             <h3>Contact</h3>
             <ul className="footer-links">
+
+              {/* Email */}
               <li>
-                <i className="fa-solid fa-envelope"></i> connect@hirecenvoro.com
+                <a href="mailto:connect@hirecenvoro.com">
+                  <i className="fa-solid fa-envelope"></i> connect@hirecenvoro.com
+                </a>
               </li>
+
+              {/* Phone */}
               <li>
-                <i className="fa-solid fa-phone"></i> +91 8976246255 / +91 8650592915
+                <a href="tel:+918976246255">
+                  <i className="fa-solid fa-phone"></i> +91 8976246255 / +91 8650592915
+                </a>
               </li>
+
+              {/* Google Maps Location */}
               <li>
-                <i className="fa-solid fa-location-dot"></i> 4th floor Zenia building,<br></br>
-                Hiranandani circle, Hiranandani <br>
-                </br>business park, Thane, Maharashtra - 400607
+                <a
+                  href="https://www.google.com/maps?q=Zenia+Building+Hiranandani+Circle+Thane+Maharashtra+400607"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-solid fa-location-dot"></i>
+                  4th floor Zenia building,<br />
+                  Hiranandani circle, Hiranandani<br />
+                  business park, Thane, Maharashtra - 400607
+                </a>
               </li>
+
             </ul>
           </div>
+
 
         </div>
 
