@@ -1,56 +1,94 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import emailjs from "emailjs-com";
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    message: "",
+  });
 
+  // Handle Input Changes
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  // Send Email
+  const sendEmail = (e) => {
+    e.preventDefault(); // Prevent refresh
+
+    emailjs
+      emailjs.send(
+  "service_phd16to",
+  "template_t1ulqok",
+  {
+    name: formData.name,
+    email: formData.email,
+    mobile: formData.mobile,
+    message: formData.message,
+  },
+  "v28GVeI8dl0N01xYt"
+)
+
+      .then(
+        () => {
+          alert("Message sent successfully!");
+
+          // Clear Inputs
+          setFormData({
+            name: "",
+            email: "",
+            mobile: "",
+            message: "",
+          });
+        },
+        (error) => {
+          console.error("Email Error:", error);
+          alert("Failed to send message. Please try again.");
+        }
+      );
+  };
+
+  // Scroll Animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate");
-          }
+          if (entry.isIntersecting) entry.target.classList.add("animate");
         });
       },
       { threshold: 0.3 }
     );
 
-    // Observe left side contact info container
     observer.observe(document.querySelector(".contact-info"));
-
-    // Observe each contact-item
-    document.querySelectorAll(".contact-item").forEach((item) => {
-      observer.observe(item);
-    });
-
-    // Observe right side form
+    document.querySelectorAll(".contact-item").forEach((item) => observer.observe(item));
     observer.observe(document.querySelector(".contact-form"));
 
     return () => observer.disconnect();
   }, []);
 
   return (
-
-
     <section className="contact" id="contact">
-
       <div className="container">
-        <h2 className="section-title" style={{
-          fontFamily: "Montserrat, sans-serif",
-          fontSize: "24px",
-
-          fontWeight: 700,
-        }}>Get In Touch</h2>
+        <h2
+          className="section-title"
+          style={{
+            fontFamily: "Montserrat, sans-serif",
+            fontSize: "24px",
+            fontWeight: 700,
+          }}
+        >
+          Get In Touch
+        </h2>
 
         <div className="contact-container">
-          {/* LEFT SIDE - CONTACT INFO */}
+          {/* LEFT INFO */}
           <div className="contact-info">
             <h3>Contact Information</h3>
             <p>Reach out to us for any inquiries or to learn more about our services.</p>
 
-            <a
-              href="mailto:connect@hirecenvoro.com"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
+            <a href="mailto:connect@hirecenvoro.com" style={{ textDecoration: "none", color: "inherit" }}>
               <div className="contact-item">
                 <div className="contact-icon">
                   <i className="fas fa-envelope"></i>
@@ -62,11 +100,7 @@ function Contact() {
               </div>
             </a>
 
-
-            <a
-              href="tel:+918976246255"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
+            <a href="tel:+918976246255" style={{ textDecoration: "none", color: "inherit" }}>
               <div className="contact-item">
                 <div className="contact-icon">
                   <i className="fas fa-phone"></i>
@@ -77,7 +111,6 @@ function Contact() {
                 </div>
               </div>
             </a>
-
 
             <a
               href="https://www.google.com/maps/search/?api=1&query=4th+floor+Zenia+building+Hiranandani+circle+Hiranandani+business+park+Thane+Maharashtra+400607"
@@ -99,32 +132,58 @@ function Contact() {
                 </div>
               </div>
             </a>
-
           </div>
 
-          {/* RIGHT SIDE - CONTACT FORM */}
+          {/* RIGHT FORM */}
           <div className="contact-form">
             <h3>Send Us a Message</h3>
 
-            <form id="contactForm">
+            <form onSubmit={sendEmail}>
               <div className="form-group">
                 <label htmlFor="name">Full Name</label>
-                <input type="text" id="name" className="form-control" required />
+                <input
+                  type="text"
+                  id="name"
+                  className="form-control"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                />
               </div>
 
               <div className="form-group">
                 <label htmlFor="email">Email Address</label>
-                <input type="email" id="email" className="form-control" required />
+                <input
+                  type="email"
+                  id="email"
+                  className="form-control"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                />
               </div>
 
               <div className="form-group">
-                <label htmlFor="subject">Mobile No.</label>
-                <input type="text" id="subject" className="form-control" required />
+                <label htmlFor="mobile">Mobile No.</label>
+                <input
+                  type="text"
+                  id="mobile"
+                  className="form-control"
+                  required
+                  value={formData.mobile}
+                  onChange={handleChange}
+                />
               </div>
 
               <div className="form-group">
                 <label htmlFor="message">Message</label>
-                <textarea id="message" className="form-control" required></textarea>
+                <textarea
+                  id="message"
+                  className="form-control"
+                  required
+                  value={formData.message}
+                  onChange={handleChange}
+                ></textarea>
               </div>
 
               <button type="submit" className="btn">Send Message</button>
