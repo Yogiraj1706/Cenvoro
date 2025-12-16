@@ -166,29 +166,22 @@ function Contact() {
                 />
               </div>
 
-              <div className="form-group">
-                <label htmlFor="mobile">Mobile No.</label>
-                <input
-                  inputMode="numeric" pattern="[0-9]*"
+              <input
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                id="mobile"
+                name="mobile"
+                className="form-control"
+                required
+                value={formData.mobile}
+                onChange={(e) => {
+                  const value = e.target.value.replace(/[^0-9]/g, "");
+                  setFormData({ ...formData, mobile: value });
+                }}
+                maxLength="10"
+              />
 
-                  type="numeric"
-                  id="mobile"
-                  name="mobile"
-                  className="form-control"
-                  required
-                  value={formData.mobile}
-                  
-                  onChange={(e) => {
-  const value = e.target.value.replace(/[^0-9]/g, "");
-  setFormData({ ...formData, mobile: value });
-}}
-
-
-                  maxLength="10"
-                  title="Enter a valid 10-digit mobile number"
-
-                />
-              </div>
 
 
               <div className="form-group">
