@@ -96,14 +96,14 @@ function Footer() {
               {/* Email */}
               <li>
                 <a href="mailto:connect@hirecenvoro.com">
-                  <i className="fa-solid fa-envelope"></i> connect@hirecenvoro.com
+                  <i className="fa-solid fa-envelope" style={{ marginRight: "5px" }}></i> connect@hirecenvoro.com
                 </a>
               </li>
 
               {/* Phone */}
               <li>
                 <a href="tel:+918976246255">
-                  <i className="fa-solid fa-phone"></i> +91 8976246255 / +91 8650592915
+                  <i className="fa-solid fa-phone" style={{ marginRight: "2px" }}></i> +91 8976246255 / +91 8650592915
                 </a>
               </li>
 
@@ -113,13 +113,21 @@ function Footer() {
                   href="https://www.google.com/maps?q=Zenia+Building+Hiranandani+Circle+Thane+Maharashtra+400607"
                   target="_blank"
                   rel="noopener noreferrer"
+                  style={{ display: "flex", alignItems: "flex-start" }}
                 >
-                  <i className="fa-solid fa-location-dot"></i>
-                  4th floor Zenia building,<br />
-                  Hiranandani circle, Hiranandani<br />
-                  business park, Thane, Maharashtra - 400607
+                  <i
+                    className="fa-solid fa-location-dot"
+                    style={{ marginRight: "12px", marginTop: "4px" }}
+                  ></i>
+
+                  <span>
+                    4th floor Zenia building,<br />
+                    Hiranandani circle, Hiranandani<br />
+                    business park, Thane, Maharashtra - 400607
+                  </span>
                 </a>
               </li>
+
 
             </ul>
           </div>
