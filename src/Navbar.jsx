@@ -1,4 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -58,7 +60,12 @@ export default function Navbar() {
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#jobs">Find Jobs</a></li>
-        <li><a href="/hiretalent">Hire Talent</a></li>
+        <li>
+          <Link to="/hiretalent" onClick={() => window.scrollTo(0, 0)}>
+            Hire Talent
+          </Link>
+        </li>
+
         <li><a href="#contact">Contact</a></li>
 
         {/* Show login button INSIDE menu on mobile */}

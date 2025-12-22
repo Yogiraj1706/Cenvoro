@@ -302,3 +302,83 @@
   }
 }
 
+/* ===== Premium Hero Animation (Extra Smooth) ===== */
+.hero-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 2s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero text stagger */
+.hire-hero h1 {
+  opacity: 0;
+  animation: heroFade 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.25s;
+}
+
+.hire-hero p {
+  opacity: 0;
+  animation: heroFade 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Global Scroll Animations (Smoother) ===== */
+.animate {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Variants ===== */
+.fade-up {
+  transform: translateY(28px);
+}
+
+.fade-left {
+  transform: translateX(-24px);
+}
+
+/* ===== Delays (Gentler) ===== */
+.delay-1 { transition-delay: 0.15s; }
+.delay-2 { transition-delay: 0.3s; }
+.delay-3 { transition-delay: 0.45s; }
+.delay-4 { transition-delay: 0.6s; }
+.delay-5 { transition-delay: 0.75s; }
+
+/* ===== Button Hover (Softer Lift) ===== */
+.submit-btn {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.submit-btn:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+html {
+  scroll-behavior: smooth;
+}
