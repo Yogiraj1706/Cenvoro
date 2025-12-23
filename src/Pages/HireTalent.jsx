@@ -5,26 +5,35 @@ import { useEffect } from "react";
 function HireTalent() {
 
     useEffect(() => {
-        const elements = document.querySelectorAll(".animate");
-
         const observer = new IntersectionObserver(
-            (entries) => {
+            (entries, obs) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("show");
+                        obs.unobserve(entry.target);
                     }
                 });
             },
-            { threshold: 0.2 }
+            {
+                threshold: 0.25,
+                rootMargin: "0px 0px -100px 0px",
+            }
         );
 
-        elements.forEach((el) => observer.observe(el));
+        /* Observe hero, cards, and form */
+        const hero = document.querySelector(".hire-hero");
+        const cards = document.querySelectorAll(".hire-card");
+        const form = document.querySelector(".hire-form-wrapper");
+
+        if (hero) observer.observe(hero);
+        cards.forEach((card) => observer.observe(card));
+        if (form) observer.observe(form);
 
         return () => observer.disconnect();
     }, []);
-
     return (
         <>
+        <div className="bg">
             <div className="hire-hero animate hero-animate">
                 <h1>Hire Top Talent</h1>
                 <p>
@@ -127,7 +136,7 @@ function HireTalent() {
                         <div className="form-group animate fade-up delay-1">
                             <label>Urgency</label>
                             <select>
-                                <option>Immediate (1–2 weeks)</option>
+                                <option>Immediate (1-2 weeks)</option>
                                 <option>Short Term (1 month)</option>
                                 <option>Flexible</option>
                             </select>
@@ -147,7 +156,7 @@ function HireTalent() {
                     </form>
                 </div>
             </section>
-
+</div>
         </>
     );
 }
