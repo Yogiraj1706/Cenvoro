@@ -1,8 +1,20 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 
 
 export default function Navbar() {
+
+    const navigate = useNavigate();
+
+  const goToSection = (id) => {
+    navigate("/");
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   const menuRef = useRef(null);
@@ -52,21 +64,21 @@ export default function Navbar() {
       </div>
 
       {/* Nav Links */}
-      <ul
-        className={`nav-center ${menuOpen ? "open" : ""}`}
-        ref={menuRef}
-      >
-        <li><a href="/">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#jobs">Find Jobs</a></li>
-        <li>
-          <Link to="/hiretalent" onClick={() => window.scrollTo(0, 0)}>
-            Hire Talent
-          </Link>
-        </li>
+      <ul className={`nav-center ${menuOpen ? "open" : ""}`} ref={menuRef}>
+      <li><Link to="/">Home</Link></li>
 
-        <li><a href="#contact">Contact</a></li>
+      <li onClick={() => goToSection("about")}><a style={{ cursor: "pointer" }}>About</a></li>
+      <li onClick={() => goToSection("services")}><a style={{ cursor: "pointer" }}>Services</a></li>
+      <li onClick={() => goToSection("jobs")}><a style={{ cursor: "pointer" }}>Find Jobs</a></li>
+
+      <li>
+        <Link to="/hiretalent" onClick={() => window.scrollTo(0, 0)}>
+          Hire Talent
+        </Link>
+      </li>
+
+      <li onClick={() => goToSection("contact")}><a style={{ cursor: "pointer" }}>Contact</a></li>
+
 
         {/* Show login button INSIDE menu on mobile */}
         {menuOpen && (
