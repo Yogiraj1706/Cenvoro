@@ -1,24 +1,41 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
-import {useNavigate } from "react-router-dom";
-
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export default function Navbar() {
-
-    const navigate = useNavigate();
-
-  const goToSection = (id) => {
-    navigate("/");
-    setTimeout(() => {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-    }, 100);
-  };
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const [menuOpen, setMenuOpen] = useState(false);
-
   const menuRef = useRef(null);
   const hamburgerRef = useRef(null);
+
+  // HOME → always scroll to top
+  const goHome = () => {
+    setMenuOpen(false);
+
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 200);
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  // ABOUT / SERVICES / CONTACT
+  const goToSection = (id) => {
+    setMenuOpen(false);
+
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }, 200);
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -33,26 +50,24 @@ export default function Navbar() {
     };
 
     document.addEventListener("click", handleClickOutside);
-
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
   return (
     <nav className="navbar" style={{ fontFamily: '"Segoe UI", sans-serif' }}>
-
+      
+      {/* LOGO */}
       <div className="nav-left" style={{ display: "flex", alignItems: "center" }}>
-        <img
-          src="/LOGO.png"
-          alt="CENVORO Logo"
-          style={{
-            height: "45px",
-            width: "auto",
-          }}
-        />
-        <a href="/">CENVORO</a>
+        <span
+          onClick={goHome}
+          style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+        >
+          <img src="/LOGO.png" alt="CENVORO Logo" style={{ height: "45px" }} />
+          <strong style={{ marginLeft: "8px" }}>CENVORO</strong>
+        </span>
       </div>
 
-      {/* Hamburger Icon */}
+      {/* HAMBURGER */}
       <div
         className="hamburger"
         ref={hamburgerRef}
@@ -63,49 +78,60 @@ export default function Navbar() {
         <span></span>
       </div>
 
-      {/* Nav Links */}
+      {/* NAV LINKS */}
       <ul className={`nav-center ${menuOpen ? "open" : ""}`} ref={menuRef}>
-      <li><Link to="/">Home</Link></li>
+        <li>
+          <a onClick={goHome} style={{ cursor: "pointer" }}>
+            Home
+          </a>
+        </li>
 
-      <li onClick={() => goToSection("about")}><a style={{ cursor: "pointer" }}>About</a></li>
-      <li onClick={() => goToSection("services")}><a style={{ cursor: "pointer" }}>Services</a></li>
-      <li onClick={() => goToSection("jobs")}><a style={{ cursor: "pointer" }}>Find Jobs</a></li>
+        <li>
+          <a onClick={() => goToSection("about")} style={{ cursor: "pointer" }}>
+            About
+          </a>
+        </li>
 
-      <li>
-        <Link to="/hiretalent" onClick={() => window.scrollTo(0, 0)}>
-          Hire Talent
-        </Link>
-      </li>
+        <li>
+          <a onClick={() => goToSection("services")} style={{ cursor: "pointer" }}>
+            Services
+          </a>
+        </li>
 
-      <li onClick={() => goToSection("contact")}><a style={{ cursor: "pointer" }}>Contact</a></li>
+        <li>
+          <a onClick={() => goToSection("jobs")} style={{ cursor: "pointer" }}>
+            Find Jobs
+          </a>
+        </li>
 
+        <li>
+          <Link
+            to="/hiretalent"
+            onClick={() => {
+              setMenuOpen(false);
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
+            Hire Talent
+          </Link>
+        </li>
 
-        {/* Show login button INSIDE menu on mobile */}
+        <li>
+          <a onClick={() => goToSection("contact")} style={{ cursor: "pointer" }}>
+            Contact
+          </a>
+        </li>
+
         {menuOpen && (
           <li>
-            <button
-              className="login-btn"
-              style={{
-                width: "100%",
-                marginTop: "10px",
-                fontFamily: '"Segoe UI", sans-serif'
-              }}
-            >
+            <button className="login-btn" style={{ width: "100%", marginTop: "10px" }}>
               Login
             </button>
           </li>
         )}
       </ul>
 
-      {/* Desktop login button ONLY */}
-      {!menuOpen && (
-        <button
-          className="login-btn"
-          style={{ fontFamily: '"Segoe UI", sans-serif' }}
-        >
-          Login
-        </button>
-      )}
+      {!menuOpen && <button className="login-btn">Login</button>}
     </nav>
   );
 }
