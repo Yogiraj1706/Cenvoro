@@ -136,7 +136,7 @@ function Contact() {
 
           {/* RIGHT FORM */}
           <div className="contact-form">
-            <h3>Send Us a Message</h3>
+            <h3>Start Your Career Journey with CENVORO</h3>
 
             <form onSubmit={sendEmail}>
               <div className="form-group">

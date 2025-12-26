@@ -47,7 +47,7 @@ function About() {
             {/* LEFT TEXT */}
             <div className="about-text">
               <p>
-                CENVORO exists to connect ambition with opportunity.
+                CENVORO exists to connect ambition with opportunity.<br></br>
                 We partner with corporates, institutes, and professionals to create future-ready talent ecosystems
               </p>
 
