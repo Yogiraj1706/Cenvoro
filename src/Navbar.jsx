@@ -63,7 +63,7 @@ export default function Navbar() {
           style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
         >
           <img src="/LOGO.png" alt="CENVORO Logo" style={{ height: "45px" }} />
-          <strong style={{ marginLeft: "8px" }}>CENVORO</strong>
+          <strong style={{ marginLeft: "5px", fontSize:"18px"}}>CENVORO</strong>
         </span>
       </div>
 
