@@ -457,10 +457,20 @@ body, html {
 ------------------------------ */
 
 .services {
-  padding: 60px 10px;
+  margin-top: 30px;
+  padding: 40px 10px;
+  padding-bottom: 90px;
   background: #f8f9fc;
   position: relative;
+  background-image: url();
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+.services h2 {
+  margin-top: 60px;
+}
+
 
 .services-grid {
   display: flex;

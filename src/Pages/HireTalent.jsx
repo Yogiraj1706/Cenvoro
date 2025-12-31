@@ -1,12 +1,37 @@
 import "./HireTalent.css"
 import { useEffect, useState } from "react";
-import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { MuiTelInput } from "mui-tel-input";
 
-
 function HireTalent() {
 
+    function FormSection({ title, children, defaultOpen = false }) {
+  const [open, setOpen] = useState(defaultOpen);
+
+  return (
+    <div className="form-section">
+      <div
+        className="section-header"
+        onClick={() => setOpen(!open)}
+        style={{
+          cursor: "pointer",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          margin: "25px 0 10px",
+          fontWeight: "600",
+          fontSize: "18px",
+          color: "rgb(3,58,140)",
+        }}
+      >
+        <span>{title}</span>
+        <span>{open ? "▲" : "▼"}</span>
+      </div>
+
+      {open && <div className="section-content">{children}</div>}
+    </div>
+  );
+}
     const [phone, setPhone] = useState("");
     const [error, setError] = useState("");
     const [file, setFile] = useState(null);
@@ -156,16 +181,7 @@ function HireTalent() {
                                 <input type="email" placeholder="your.email@company.com" />
                             </div>
 
-                            <div className="form-group full-width">
-                                <label>Company Address</label>
-                                <textarea
-                                    rows="2"
-                                    placeholder="Company address (City, State, Country)"
-                                />
-                            </div>
-
-
-                            <div className="form-group">
+                              <div className="form-group">
                                 <label>Phone</label>
                                 <MuiTelInput
                                     value={phone}
@@ -177,59 +193,94 @@ function HireTalent() {
                                 />
                             </div>
 
+                            <div className="form-group full-width">
+                                <label>Company Address</label>
+                                <textarea
+                                    rows="2"
+                                    placeholder="Company address (City, State, Country)"
+                                />
+                            </div>
+
                             {/* ===== Job Details ===== */}
-                            <div className="form-group">
-                                <label>Position to Fill</label>
-                                <input type="text" placeholder="e.g. Frontend Developer" />
-                            </div>
 
-                            <div className="form-group">
-                                <label>Employment Type</label>
-                                <select>
-                                    <option>Full-time</option>
-                                    <option>Part-time</option>
-                                    <option>Contract</option>
-                                    <option>Internship</option>
-                                </select>
-                            </div>
+                             <FormSection title="Job Details">
+                <div className="form-group">
+                  <label>Position to Fill</label>
+                  <input type="text" />
+                </div>
 
-                            <div className="form-group">
-                                <label>Experience Level</label>
-                                <select>
-                                    <option>Fresher</option>
-                                    <option>Mid-Level</option>
-                                    <option>Senior</option>
-                                </select>
-                            </div>
+                <div className="form-group">
+                  <label>Number of Positions</label>
+                  <input type="number" min="1" />
+                </div>
 
-                            <div className="form-group">
-                                <label>Work Mode</label>
-                                <select>
-                                    <option>Onsite</option>
-                                    <option>Remote</option>
-                                    <option>Hybrid</option>
-                                </select>
-                            </div>
+                <div className="form-group">
+                  <label>Employment Type</label>
+                  <select>
+                    <option>Full-time</option>
+                    <option>Part-time</option>
+                    <option>Contract</option>
+                    <option>Internship</option>
+                  </select>
+                </div>
 
-                            <div className="form-group">
-                                <label>Location</label>
-                                <input type="text" placeholder="City / Remote" />
-                            </div>
+                <div className="form-group">
+                  <label>Experience Level</label>
+                  <select>
+                    <option>Fresher</option>
+                    <option>Mid-Level</option>
+                    <option>Senior</option>
+                  </select>
+                </div>
+
+                <div className="form-group">
+                  <label>Work Mode</label>
+                  <select>
+                    <option>Onsite</option>
+                    <option>Remote</option>
+                    <option>Hybrid</option>
+                  </select>
+                </div>
+
+                <div className="form-group">
+                  <label>Location</label>
+                  <input type="text" />
+                </div>
+
+                <div className="form-group">
+                  <label>Number of Positions</label>
+                  <input type="number" min="1" />
+                </div>
+              </FormSection>
+                          
 
                             {/* ===== Compensation & Timeline ===== */}
-                            <div className="form-group">
-                                <label>Salary Range</label>
-                                <input type="text" placeholder="e.g. ₹6–10 LPA" />
-                            </div>
 
-                            <div className="form-group">
-                                <label>Urgency</label>
-                                <select>
-                                    <option>Immediate</option>
-                                    <option>Within 1 Month</option>
-                                    <option>Flexible</option>
-                                </select>
-                            </div>
+                            <FormSection title="Compensation & Timeline">
+                <div className="form-group">
+                  <label>Salary Range</label>
+                  <input type="text" placeholder="₹6–10 LPA" />
+                </div>
+
+                <div className="form-group">
+                  <label>Urgency</label>
+                  <select>
+                    <option>Immediate</option>
+                    <option>Within 1 Month</option>
+                    <option>Flexible</option>
+                  </select>
+                </div>
+
+                <div className="form-group">
+                  <label>Joining Timeline</label>
+                  <select>
+                    <option>Within 15 Days</option>
+                    <option>Within 30 Days</option>
+                    <option>1–3 Months</option>
+                  </select>
+                </div>
+              </FormSection>
+
 
                             {/* ===== Requirements ===== */}
                             <div className="form-group full-width">
@@ -262,8 +313,6 @@ function HireTalent() {
                                     </div>
                                 )}
                             </div>
-
-
 
                             <button type="submit" className="submit-btn">
                                 Submit Hiring Request
