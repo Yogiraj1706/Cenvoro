@@ -2318,14 +2318,15 @@ footer p {
    GREY CIRCLE (CENTERED)
 ================================ */
 .service-circle {
-  width: 400px;
-  height: 400px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   background: #e9ecff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  margin-left: 60px;
 }
 
 /* Image inside circle */

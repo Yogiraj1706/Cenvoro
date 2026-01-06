@@ -85,7 +85,7 @@ useEffect(() => {
             <div className="service-row">
               <div className="service-circle animate-img">
                 <img
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80"
+                  src="src\Images\Candidates.jpeg"
                   alt="Institute Partnership"
                   className="service-circle-image"
                 />
@@ -119,9 +119,9 @@ useEffect(() => {
                   "linear-gradient(135deg, #f8f9fd 0%, #f5f6fc 50%, #cccccc 100%)",
               }}
             >
-              <div className="service-circle animate-img">
+              <div className="service-circle animate-img" style={{marginRight:"65px",}}>
                 <img
-                  src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655"
+                  src="src\Images\Institute.jpeg"
                   alt="Institute Partnership"
                   className="service-circle-image"
                 />
@@ -151,7 +151,7 @@ useEffect(() => {
             <div className="service-row">
   <div className="service-circle animate-img">
     <img
-      src="https://img.freepik.com/free-photo/guy-shows-document-girl-group-young-freelancers-office-have-conversation-working_146671-13569.jpg"
+      src="src\Images\Employee.jpeg"
       alt="Institute Partnership"
       className="service-circle-image"
     />
