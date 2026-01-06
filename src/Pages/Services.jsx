@@ -85,7 +85,7 @@ useEffect(() => {
             <div className="service-row">
               <div className="service-circle animate-img">
                 <img
-                  src="src\Images\Candidates.jpeg"
+                  src="public/Candidates.jpeg"
                   alt="Institute Partnership"
                   className="service-circle-image"
                 />
@@ -121,7 +121,7 @@ useEffect(() => {
             >
               <div className="service-circle animate-img" style={{marginRight:"75px",}}>
                 <img
-                  src="src\Images\Institute.jpeg"
+                  src="public/Institute.jpeg"
                   alt="Institute Partnership"
                   className="service-circle-image"
                 />
@@ -151,7 +151,7 @@ useEffect(() => {
             <div className="service-row">
   <div className="service-circle animate-img">
     <img
-      src="src\Images\Employee.jpeg"
+      src="public/Employee.jpeg"
       alt="Institute Partnership"
       className="service-circle-image"
     />
