@@ -4,31 +4,31 @@ function Services() {
   const [activeService, setActiveService] = useState(null);
 
 
-useEffect(() => {
-  if (activeService !== null) return;
+  useEffect(() => {
+    if (activeService !== null) return;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    },
-    { threshold: 0.35 }
-  );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
 
-  const elements = document.querySelectorAll(
-    ".animate-img, .animate-text"
-  );
+    const elements = document.querySelectorAll(
+      ".animate-img, .animate-text"
+    );
 
-  elements.forEach((el) => {
-    el.classList.remove("show"); // reset
-    observer.observe(el);
-  });
+    elements.forEach((el) => {
+      el.classList.remove("show"); // reset
+      observer.observe(el);
+    });
 
-  return () => observer.disconnect();
-}, [activeService]);
+    return () => observer.disconnect();
+  }, [activeService]);
 
 
 
@@ -85,7 +85,7 @@ useEffect(() => {
             <div className="service-row">
               <div className="service-circle animate-img">
                 <img
-                  src="src\Images\Candidates.jpeg"
+                  src="/Candidates.jpeg"
                   alt="Institute Partnership"
                   className="service-circle-image"
                 />
@@ -121,7 +121,7 @@ useEffect(() => {
             >
               <div className="service-circle animate-img">
                 <img
-                  src="src\Images\Institute.jpeg"
+                  src="/Institute.jpeg"
                   alt="Institute Partnership"
                   className="service-circle-image"
                 />
@@ -149,33 +149,32 @@ useEffect(() => {
 
             {/* Employers */}
             <div className="service-row">
-  <div className="service-circle animate-img">
-    <img
-      src="src\Images\Employee.jpeg"
-      alt="Institute Partnership"
-      className="service-circle-image"
-    />
-  </div>
+              <div className="service-circle animate-img">
+                <img
+                  src="/Employee.jpeg"
+                  alt="Institute Partnership"
+                  className="service-circle-image"
+                />
+              </div>
 
-  <div className="service-text animate-text">
-    <h3>For Employers</h3>
-    <p>
-      Recruitment solutions, workforce training,
-      and talent development programs.
-    </p>
-    <button
-      className="btn-primary"
-      style={{
-        width: "fit-content",
-        padding: "12px 32px",
-      }}
-      onClick={() => setActiveService("employers")}
-    >
-      Learn More
-    </button>
-  </div>
-</div>
-
+              <div className="service-text animate-text">
+                <h3>For Employers</h3>
+                <p>
+                  Recruitment solutions, workforce training,
+                  and talent development programs.
+                </p>
+                <button
+                  className="btn-primary"
+                  style={{
+                    width: "fit-content",
+                    padding: "12px 32px",
+                  }}
+                  onClick={() => setActiveService("employers")}
+                >
+                  Learn More
+                </button>
+              </div>
+            </div>
           </>
         )}
 
