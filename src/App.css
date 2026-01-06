@@ -150,7 +150,7 @@ body, html {
   width: 100%;
   min-height: 90vh;
   height: auto;
-  background-image: url("/public/Images/Home.jpg");
+  background-image: url("./Images/Home.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2326,7 +2326,7 @@ footer p {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-left: 60px;
+  margin-left: 100px;
 }
 
 /* Image inside circle */

@@ -85,7 +85,7 @@ useEffect(() => {
             <div className="service-row">
               <div className="service-circle animate-img">
                 <img
-                  src="public\Images\Candidates.jpg"
+                  src="src\Images\Candidates.jpeg"
                   alt="Institute Partnership"
                   className="service-circle-image"
                 />
@@ -119,9 +119,9 @@ useEffect(() => {
                   "linear-gradient(135deg, #f8f9fd 0%, #f5f6fc 50%, #cccccc 100%)",
               }}
             >
-              <div className="service-circle animate-img" style={{marginRight:"65px",}}>
+              <div className="service-circle animate-img" style={{marginRight:"75px",}}>
                 <img
-                  src="public\Images\Institute.jpg"
+                  src="src\Images\Institute.jpeg"
                   alt="Institute Partnership"
                   className="service-circle-image"
                 />
@@ -151,7 +151,7 @@ useEffect(() => {
             <div className="service-row">
   <div className="service-circle animate-img">
     <img
-      src="public\Images\Employee.jpg"
+      src="src\Images\Employee.jpeg"
       alt="Institute Partnership"
       className="service-circle-image"
     />
