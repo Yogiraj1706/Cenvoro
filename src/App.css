@@ -2401,11 +2401,11 @@ footer p {
 }
 
 /* Media */
+
 @media (max-width: 768px) {
-  section,
-  .top-section,
-  .bottom-section {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+  .service-row {
+    margin: 26px 0;       /* reduce vertical gap */
+    padding: 16px 12px;   /* reduce inner spacing */
   }
 }
+
