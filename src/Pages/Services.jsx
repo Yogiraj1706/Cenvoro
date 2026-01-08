@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+
 
 function Services() {
   const [activeService, setActiveService] = useState(null);
+  const servicesRef = useRef(null);
 
 
   useEffect(() => {
@@ -31,27 +33,40 @@ function Services() {
   }, [activeService]);
 
 
-useEffect(() => {
-  if (!activeService) return;
+  useEffect(() => {
+    if (!activeService) return;
 
-  const content = document.querySelector(".service-detail-content");
-  const image = document.querySelector(".service-detail-image");
+    const content = document.querySelector(".service-detail-content");
+    const image = document.querySelector(".service-detail-image");
 
-  if (content && image) {
-    content.classList.remove("animate-content");
-    image.classList.remove("animate-image");
+    if (content && image) {
+      content.classList.remove("animate-content");
+      image.classList.remove("animate-image");
 
-    // force reflow to restart animation
-    void content.offsetWidth;
+      // force reflow to restart animation
+      void content.offsetWidth;
 
-    content.classList.add("animate-content");
-    image.classList.add("animate-image");
-  }
-}, [activeService]);
+      content.classList.add("animate-content");
+      image.classList.add("animate-image");
+    }
+  }, [activeService]);
+
+  const openService = (service) => {
+    setActiveService(service);
+
+    // wait for DOM to update
+    setTimeout(() => {
+      servicesRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 50);
+  };
+
 
 
   return (
-    <section className="services" id="services">
+    <section className="services" id="services" ref={servicesRef}>
       <div className="container">
         <h2 className="section-title">Our Services</h2>
 
@@ -78,14 +93,12 @@ useEffect(() => {
                 </p>
                 <button
                   className="btn-primary"
-                  style={{
-                    width: "fit-content",
-                    padding: "12px 32px",
-                  }}
-                  onClick={() => setActiveService("candidates")}
+                  style={{ width: "fit-content", padding: "12px 32px" }}
+                  onClick={() => openService("candidates")}
                 >
                   Learn More
                 </button>
+
               </div>
             </div>
 
@@ -115,14 +128,12 @@ useEffect(() => {
                 </p>
                 <button
                   className="btn-primary"
-                  style={{
-                    width: "fit-content",
-                    padding: "12px 32px",
-                  }}
-                  onClick={() => setActiveService("institutes")}
+                  style={{ width: "fit-content", padding: "12px 32px" }}
+                  onClick={() => openService("institutes")}
                 >
                   Learn More
                 </button>
+
               </div>
             </div>
 
@@ -145,16 +156,12 @@ useEffect(() => {
                 </p>
                 <button
                   className="btn-primary"
-                  style={{
-                    width: "fit-content",
-                    padding: "12px 32px",
-                  }}
-                  onClick={() => setActiveService("employers")}
-
-                  
+                  style={{ width: "fit-content", padding: "12px 32px" }}
+                  onClick={() => openService("employers")}
                 >
                   Learn More
                 </button>
+
               </div>
             </div>
           </>
@@ -196,7 +203,16 @@ useEffect(() => {
                 </ul>
 
                 <a href="#contact" className="btn-primary">Get Started</a>
-                <span className="back-to-services" onClick={() => setActiveService(null)}>
+                <span className="back-to-services" onClick={() => {
+                  setActiveService(null);
+                  setTimeout(() => {
+                    servicesRef.current?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }, 50);
+                }}
+                >
                   ← Back to Services
                 </span>
               </div>
@@ -229,15 +245,24 @@ useEffect(() => {
                 <ul className="benefits-list">
                   <li><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i>Stronger institute-industry relationships</li>
                   <li><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i>Higher placement success rates</li>
-                  <li><i className="fas fa-star"style={{ color: "#ff9800", marginRight: "10px" }}></i>Better-prepared graduates</li>
-                  <li><i className="fas fa-star"style={{ color: "#ff9800", marginRight: "10px" }}></i>Enhanced institute reputation and credibility</li>
+                  <li><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i>Better-prepared graduates</li>
+                  <li><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i>Enhanced institute reputation and credibility</li>
                 </ul>
 
                 <a href="#contact" className="btn-primary" style={{
                   width: "fit-content",
                   padding: "12px 32px",
                 }}>Partner With Us</a>
-                <span className="back-to-services" onClick={() => setActiveService(null)}>
+                <span className="back-to-services" onClick={() => {
+                  setActiveService(null);
+                  setTimeout(() => {
+                    servicesRef.current?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }, 50);
+                }}
+                >
                   ← Back to Services
                 </span>
               </div>
@@ -288,7 +313,16 @@ useEffect(() => {
 
 
                 <a href="/hiretalent" className="btn-primary">Find Talent</a>
-                <span className="back-to-services" onClick={() => setActiveService(null)}>
+                <span className="back-to-services" onClick={() => {
+                  setActiveService(null);
+                  setTimeout(() => {
+                    servicesRef.current?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }, 50);
+                }}
+                >
                   ← Back to Services
                 </span>
               </div>
