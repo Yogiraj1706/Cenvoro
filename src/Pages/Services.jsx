@@ -287,7 +287,7 @@ useEffect(() => {
 
 
 
-                <a href="#contact" className="btn-primary">Find Talent</a>
+                <a href="/hiretalent" className="btn-primary">Find Talent</a>
                 <span className="back-to-services" onClick={() => setActiveService(null)}>
                   ← Back to Services
                 </span>

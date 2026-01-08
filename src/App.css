@@ -2404,7 +2404,7 @@ footer p {
 
 @media (max-width: 768px) {
   .service-row {
-    margin: 26px 0;       /* reduce vertical gap */
+    margin: 0;       /* reduce vertical gap */
     padding: 16px 12px;   /* reduce inner spacing */
   }
 }
