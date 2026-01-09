@@ -2404,11 +2404,10 @@ footer p {
 
 @media (max-width: 768px) {
   .service-row {
-    margin: 0;       /* reduce vertical gap */
+    margin: 15px 0;       /* reduce vertical gap */
     padding: 16px 12px;   /* reduce inner spacing */
   }
 }
-
 
 
 /* ---------- Base hidden state ---------- */
@@ -2490,3 +2489,4 @@ footer p {
 .service-detail-content ul {
   animation-delay: 0.35s;
 }
+
