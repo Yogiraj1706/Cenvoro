@@ -315,8 +315,8 @@ function Services() {
             <div className="service-detail">
               <div className="service-detail-content">
                 <h2>For Employers - Recruitment & Training</h2>
-                <p >We provide companies with efficient hiring solutions aligned to business goals, culture, and long-term growth.</p>
-<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi consequuntur neque at nobis cum tempore hic tempora eius, aperiam a, dignissimos nemo voluptatum! Non minus accusamus omnis eligendi sit dolor?</p>
+                <p>We provide companies with efficient hiring solutions aligned to business goals, culture, and long-term growth.</p>
+
                 <ul className="benefits-list animate-list">
                   <li><i className="fas fa-check"></i>End-to-end recruitment support</li>
                   <li><i className="fas fa-check"></i>Pre-screened candidates aligned with role & culture fit</li>
