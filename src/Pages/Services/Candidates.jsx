@@ -5,6 +5,8 @@ function Candidates() {
     const navigate = useNavigate();
 
     useEffect(() => {
+
+        
   window.scrollTo(0, 0);
 
   const handleScroll = () => {
@@ -22,7 +24,7 @@ function Candidates() {
   // Run once AFTER small delay (so nothing appears instantly)
   setTimeout(() => {
     handleScroll();
-  }, 400);
+  }, 300);
 
   window.addEventListener("scroll", handleScroll);
 
@@ -41,7 +43,7 @@ useEffect(() => {
       if (rect.top < window.innerHeight - 100) {
         setTimeout(() => {
           item.classList.add("show");
-        }, index * 250); // 👈 controls speed (bigger = slower)
+        }, index * 150); // 👈 controls speed (bigger = slower)
       }
     });
   };
@@ -100,7 +102,7 @@ useEffect(() => {
                     </a>
 
                     <span
-                        className="back-to-services animate-content"
+                        className="back-to-services animate-content no-delay"
                         onClick={() => {
                             navigate("/", { state: { scrollTo: "services" } });
                         }}

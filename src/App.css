@@ -2412,3 +2412,18 @@ footer p {
   transform: translateY(0);
 }
 
+.no-delay {
+  transition-delay: 0s !important;
+}
+
+.animate-content {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.animate-content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
