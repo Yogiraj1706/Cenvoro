@@ -55,17 +55,8 @@ function Employers() {
     }, []);
 
     return (
-        <section className="service-detail-page"
-         style={{
-                backgroundImage:
-                    "url('/Emplo.jpeg')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                minHeight: "100vh",
-            }}>
-            <h2 className="section-title animate-content"  style={{ marginTop:"5px",
-                marginBottom:"0"}}>Our Services</h2>
+        <section className="service-detail-page">
+            <h2 className="section-title animate-content" style={{ margin: "5px" }}>Our Services</h2>
             <div className="service-detail">
                 <div className="service-detail-content">
                     <h2 className="animate-content">For Employers - Recruitment & Training</h2>
@@ -103,6 +94,12 @@ function Employers() {
                     </span>
                 </div>
 
+                <div className="service-detail-image animate-image">
+                    <img 
+                        src="https://img.freepik.com/free-photo/guy-shows-document-girl-group-young-freelancers-office-have-conversation-working_146671-13569.jpg?t=st=1721564726~exp=1721568326~hmac=0c8d4d6c6c9e6a5a5b5c5d5e5f5a5b5c5d5e5f5a5b5c5d5e5f5a5b5c5d5e5f5a&amp;w=1380" 
+                        alt="Recruitment Solutions" 
+                    />
+                </div>
             </div>
         </section>
     );
