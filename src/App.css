@@ -2379,135 +2379,36 @@ footer p {
 
 /*Service details animation */
 
-/* === GLOBAL SLOW MOTION FEEL === */
-.service-details {
+/* Content hidden initially */
+.animate-content {
   opacity: 0;
   transform: translateY(60px);
-  transition: opacity 1.4s ease, transform 1.4s ease;
+  transition: all 0.7s ease;
+  pointer-events: none;
 }
 
-.service-details[style*="block"] {
+.animate-content.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Image visible immediately */
+.animate-image {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hide list items initially */
+.animate-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+/* When visible */
+.animate-item.show {
   opacity: 1;
   transform: translateY(0);
 }
-
-
-
-/* === SERVICE DETAIL CARD === */
-.service-detail {
-  display: flex;
-  gap: 60px;
-  align-items: center;
-  animation: serviceCardEnter 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-@keyframes serviceCardEnter {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* === CONTENT STAGGER === */
-.service-detail-content > * {
-  opacity: 0;
-  transform: translateY(28px);
-  animation: contentFadeUp 1.1s ease forwards;
-}
-
-.service-detail-content > *:nth-child(1) { animation-delay: 0.3s; }
-.service-detail-content > *:nth-child(2) { animation-delay: 0.6s; }
-.service-detail-content > *:nth-child(3) { animation-delay: 0.9s; }
-.service-detail-content > *:nth-child(4) { animation-delay: 1.2s; }
-.service-detail-content > *:nth-child(5) { animation-delay: 1.5s; }
-.service-detail-content > *:nth-child(6) { animation-delay: 1.8s; }
-
-@keyframes contentFadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-
-/* === IMAGE ANIMATION === */
-.service-detail-image {
-  opacity: 0;
-  transform: scale(0.92) translateY(30px);
-  animation: imageReveal 1.8s ease forwards;
-  animation-delay: 0.4s;
-}
-
-@keyframes imageReveal {
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-
-/* === LIST ITEM ANIMATION === */
-.animate-list li {
-  opacity: 0;
-  transform: translateY(22px);
-  animation: listFadeUp 0.9s ease forwards;
-}
-
-.animate-list li:nth-child(1) { animation-delay: 0.6s; }
-.animate-list li:nth-child(2) { animation-delay: 0.9s; }
-.animate-list li:nth-child(3) { animation-delay: 1.2s; }
-.animate-list li:nth-child(4) { animation-delay: 1.5s; }
-
-@keyframes listFadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-
-@media (max-width: 768px) {
-  .service-detail {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  /* FORCE IMAGE FIRST */
-  .service-detail-image {
-    order: -1;
-    width: 100%;
-  }
-
-  /* CONTENT AFTER IMAGE */
-  .service-detail-content {
-    order: 1;
-    text-align: left;
-  }
-
-  .service-detail-image img {
-    width: 100%;
-    border-radius: 18px;
-  }
-}
-
-
-@keyframes floatUp {
-  from {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(-120vh);
-    opacity: 1;
-  }
-}
-
 
