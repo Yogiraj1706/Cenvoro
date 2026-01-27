@@ -6,53 +6,53 @@ function Candidates() {
 
     useEffect(() => {
 
-        
-  window.scrollTo(0, 0);
 
-  const handleScroll = () => {
-    const elements = document.querySelectorAll(".animate-content");
+        window.scrollTo(0, 0);
 
-    elements.forEach((el) => {
-      const rect = el.getBoundingClientRect();
+        const handleScroll = () => {
+            const elements = document.querySelectorAll(".animate-content");
 
-      if (rect.top < window.innerHeight - 120) {
-        el.classList.add("show");
-      }
-    });
-  };
+            elements.forEach((el) => {
+                const rect = el.getBoundingClientRect();
 
-  // Run once AFTER small delay (so nothing appears instantly)
-  setTimeout(() => {
-    handleScroll();
-  }, 400);
+                if (rect.top < window.innerHeight - 120) {
+                    el.classList.add("show");
+                }
+            });
+        };
 
-  window.addEventListener("scroll", handleScroll);
-
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-
-useEffect(() => {
-  window.scrollTo(0, 0);
-
-  const items = document.querySelectorAll(".animate-item");
-
-  const revealItems = () => {
-    items.forEach((item, index) => {
-      const rect = item.getBoundingClientRect();
-
-      if (rect.top < window.innerHeight - 100) {
+        // Run once AFTER small delay (so nothing appears instantly)
         setTimeout(() => {
-          item.classList.add("show");
-        }, index * 250); // 👈 controls speed (bigger = slower)
-      }
-    });
-  };
+            handleScroll();
+        }, 400);
 
-  window.addEventListener("scroll", revealItems);
+        window.addEventListener("scroll", handleScroll);
 
-  // nothing appears until scroll
-  return () => window.removeEventListener("scroll", revealItems);
-}, []);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+
+        const items = document.querySelectorAll(".animate-item");
+
+        const revealItems = () => {
+            items.forEach((item, index) => {
+                const rect = item.getBoundingClientRect();
+
+                if (rect.top < window.innerHeight - 100) {
+                    setTimeout(() => {
+                        item.classList.add("show");
+                    }, index * 250); // 👈 controls speed (bigger = slower)
+                }
+            });
+        };
+
+        window.addEventListener("scroll", revealItems);
+
+        // nothing appears until scroll
+        return () => window.removeEventListener("scroll", revealItems);
+    }, []);
 
 
 
