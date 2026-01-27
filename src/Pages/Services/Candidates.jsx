@@ -24,7 +24,7 @@ function Candidates() {
   // Run once AFTER small delay (so nothing appears instantly)
   setTimeout(() => {
     handleScroll();
-  }, 300);
+  }, 400);
 
   window.addEventListener("scroll", handleScroll);
 
@@ -43,7 +43,7 @@ useEffect(() => {
       if (rect.top < window.innerHeight - 100) {
         setTimeout(() => {
           item.classList.add("show");
-        }, index * 150); // 👈 controls speed (bigger = slower)
+        }, index * 250); // 👈 controls speed (bigger = slower)
       }
     });
   };
