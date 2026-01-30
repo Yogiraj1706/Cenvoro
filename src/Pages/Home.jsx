@@ -70,7 +70,7 @@ function Home() {
 
         <p>
           At CENVORO, we believe growth happens when the right people meet
-          the right opportunities.
+          the right opportunities.We bridge corporates, institutes, and professionals to build future-ready teams.
         </p>
 
         <div className="hero-buttons">

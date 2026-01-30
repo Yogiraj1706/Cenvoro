@@ -2432,3 +2432,19 @@ footer p {
   }
 }
 
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
