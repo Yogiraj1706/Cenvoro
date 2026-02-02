@@ -123,7 +123,7 @@ function Institute() {
                     <a className="btn-primary animate-content"
                         onClick={() => {
                             navigate("/", { state: { scrollTo: "contact" } });
-                        }}>Partner With Us</a>
+                        }}>Partner WithUs</a>
                     <span
                         className="back-to-services"
                         onClick={() => {
