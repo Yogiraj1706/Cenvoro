@@ -120,10 +120,10 @@ function Institute() {
                         <li className="animate-item"><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i>Enhanced institute reputation and credibility</li>
                     </ul>
 
-                    <a className="btn-primary animate-content"
+                    <a className="btn-primary animate-content" style={{marginRight:"0px"}}
                         onClick={() => {
                             navigate("/", { state: { scrollTo: "contact" } });
-                        }}>Partner WithUs</a>
+                        }}>Partner With Us</a>
                     <span
                         className="back-to-services"
                         onClick={() => {
