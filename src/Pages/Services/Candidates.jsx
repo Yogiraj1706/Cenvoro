@@ -57,7 +57,49 @@ function Candidates() {
 
 
     return (
-        <section className="service-detail-page">
+        <section
+            style={{
+                position: "relative",
+                overflow: "hidden",
+                minHeight: "100vh"
+            }}
+        >
+            {/* Blurred Background */}
+            <div
+                style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    backgroundImage:
+                        "url('/CANDIDATES1.png')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    filter: "blur(12px)",
+                    transform: "scale(1.1)",
+                    zIndex: 0
+                }}
+            />
+
+            {/* Dark overlay */}
+            <div
+                style={{
+                    position: "absolute",
+                    inset: 0,
+                    backgroundColor: "rgba(0,0,0,0.3)",
+                    zIndex: 1
+                }}
+            />
+
+            {/* Main Content */}
+            <div
+                style={{
+                    position: "relative",
+                    zIndex: 2,
+                    padding: "7px 20px"
+                }}
+            >
             <h2 className="section-title animate-content" style={{ margin: "5px" }}>
                 Our Services
             </h2>
@@ -117,6 +159,7 @@ function Candidates() {
                         alt="Career Growth"
                     />
                 </div>
+            </div>
             </div>
         </section>
     );
