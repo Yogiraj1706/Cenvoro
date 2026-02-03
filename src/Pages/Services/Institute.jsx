@@ -31,28 +31,55 @@ function Institute() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
+ useEffect(() => {
+  window.scrollTo(0, 0);
 
-        const items = document.querySelectorAll(".animate-item");
+  const lists = document.querySelectorAll(".animate-list");
 
-        const revealItems = () => {
-            items.forEach((item, index) => {
-                const rect = item.getBoundingClientRect();
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
 
-                if (rect.top < window.innerHeight - 100) {
-                    setTimeout(() => {
-                        item.classList.add("show");
-                    }, index * 250); // 👈 controls speed (bigger = slower)
-                }
+        const items = entry.target.querySelectorAll(".animate-item");
+
+        // stagger inside current list
+        items.forEach((item, index) => {
+          setTimeout(() => {
+            item.classList.add("show");
+          }, index * 350); // slower stagger
+        });
+
+        observer.unobserve(entry.target);
+
+        // 👉 Trigger NEXT list after current finishes
+        const totalTime = items.length * 350 + 200;
+
+        const nextList = entry.target.nextElementSibling?.classList.contains("animate-list")
+          ? entry.target.nextElementSibling
+          : null;
+
+        if (nextList) {
+          setTimeout(() => {
+            const nextItems = nextList.querySelectorAll(".animate-item");
+
+            nextItems.forEach((item, index) => {
+              setTimeout(() => {
+                item.classList.add("show");
+              }, index * 350);
             });
-        };
+          }, totalTime);
+        }
+      });
+    },
+    { threshold: 0.35 }
+  );
 
-        window.addEventListener("scroll", revealItems);
+  lists.forEach((list) => observer.observe(list));
 
-        // nothing appears until scroll
-        return () => window.removeEventListener("scroll", revealItems);
-    }, []);
+  return () => observer.disconnect();
+}, []);
+
 
 
     return (
@@ -96,13 +123,13 @@ function Institute() {
                 style={{
                     position: "relative",
                     zIndex: 2,
-                    padding: "0px 10px"
+                    padding: "10px 20px"
                 }}
             >
-            <h2 className="heading animate-content" style={{ margin: "0px" }}>Our Services</h2>
+            <h2 className="heading animate-content" style={{ margin: "5px" }}>Our Services</h2>
             <div className="service-detail">
                 <div className="service-detail-content">
-                    <h2 className="animate-content" style={{ margintop: "0px" }}>For Institutes - Placement Partnerships</h2>
+                    <h2 className="animate-content">For Institutes - Placement Partnerships</h2>
                     <p className="animate-content">We strengthen student placement outcomes by aligning institutes with evolving industry hiring needs.</p>
                     <ul className="benefits-list animate-list animate-content">
                         <li className="animate-item"><i className="fas fa-check"  style={{ color: "white" }}></i> Structured MoUs for smooth placement processes</li>

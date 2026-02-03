@@ -2284,7 +2284,7 @@ footer p {
 }
 
 .service-detail-content h2 {
-  font-size: 28px;
+  font-size: 26px;
   margin-bottom: 16px;
   color:rgb(255, 255, 255);
   font-weight: 700;
@@ -2293,19 +2293,19 @@ footer p {
 .service-detail-content h3 {
   margin-top: 20px;
   color:rgb(255, 255, 255);
-  font-size: 26px;
+  font-size: 25px;
   font-weight: 700;
 }
 
 .service-detail-content p {
-  margin-bottom: 18px;
-  line-height: 1.6;
+  margin-bottom: 12px;
+  line-height: 1.5;
   font-family: Poppins, sans-serif;
   font-weight: 500;
 }
 
 .benefits-list {
-  padding-left: 20px;
+  padding-left: 8px;
   margin-bottom: 16px;
 }
 
@@ -2316,8 +2316,6 @@ footer p {
   font-weight: 400;
   color: white;
 }
-
-
 
 /* IMAGE RIGHT */
 .service-detail-image {
@@ -2388,7 +2386,7 @@ footer p {
   transform: translateY(70px);
   transition: all 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
   pointer-events: none;
-  color: white;
+  color: rgb(243, 235, 235);
 }
 
 .animate-content.show {
@@ -2445,7 +2443,7 @@ footer p {
 .heading {
   text-align: center;
   color: #ffffff;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 700;
   margin-bottom: 50px;
   position: relative;

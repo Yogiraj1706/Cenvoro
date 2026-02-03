@@ -121,7 +121,7 @@ function Employers() {
                         <li className="animate-item"><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i> Stronger, future-ready teams</li>
                     </ul>
 
-                    <a href="/hiretalent" className="btn-primary animate-content">Find Talent</a>
+                    <a href="/hiretalent" className="btn-primary animate-content"  style={{ textDecoration: "none" }}>Find Talent</a>
                     <span
                         className="back-to-services"
                         onClick={() => {
