@@ -14,6 +14,7 @@ import "./App.css";
 import Candidates from "./Pages/Services/Candidates";
 import Institute from "./Pages/Services/Institute";
 import Employers from "./Pages/Services/Employers";
+import Login from "./Pages/Login";
 
 
 function App() {
@@ -64,6 +65,7 @@ useEffect(() => {
           
 
           <Route path="/hiretalent" element={<HireTalent />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
 

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -30,10 +30,14 @@ export default function Navbar() {
     if (location.pathname !== "/") {
       navigate("/");
       setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+        document.getElementById(id)?.scrollIntoView({
+          behavior: "smooth",
+        });
       }, 200);
     } else {
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      document.getElementById(id)?.scrollIntoView({
+        behavior: "smooth",
+      });
     }
   };
 
@@ -57,13 +61,26 @@ export default function Navbar() {
     <nav className="navbar" style={{ fontFamily: '"Segoe UI", sans-serif' }}>
       
       {/* LOGO */}
-      <div className="nav-left" style={{ display: "flex", alignItems: "center" }}>
+      <div
+        className="nav-left"
+        style={{ display: "flex", alignItems: "center" }}
+      >
         <span
           onClick={goHome}
-          style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
+          }}
         >
-          <img src="/LOGO.png" alt="CENVORO Logo" style={{ height: "35px" }} />
-          <strong style={{ marginLeft: "10px", fontSize:"18px"}}>CENVORO</strong>
+          <img
+            src="/LOGO.png"
+            alt="CENVORO Logo"
+            style={{ height: "35px" }}
+          />
+          <strong style={{ marginLeft: "10px", fontSize: "18px" }}>
+            CENVORO
+          </strong>
         </span>
       </div>
 
@@ -79,7 +96,10 @@ export default function Navbar() {
       </div>
 
       {/* NAV LINKS */}
-      <ul className={`nav-center ${menuOpen ? "open" : ""}`} ref={menuRef}>
+      <ul
+        className={`nav-center ${menuOpen ? "open" : ""}`}
+        ref={menuRef}
+      >
         <li>
           <a onClick={goHome} style={{ cursor: "pointer" }}>
             Home
@@ -87,19 +107,28 @@ export default function Navbar() {
         </li>
 
         <li>
-          <a onClick={() => goToSection("about")} style={{ cursor: "pointer" }}>
+          <a
+            onClick={() => goToSection("about")}
+            style={{ cursor: "pointer" }}
+          >
             About
           </a>
         </li>
 
         <li>
-          <a onClick={() => goToSection("services")} style={{ cursor: "pointer" }}>
+          <a
+            onClick={() => goToSection("services")}
+            style={{ cursor: "pointer" }}
+          >
             Services
           </a>
         </li>
 
         <li>
-          <a onClick={() => goToSection("jobs")} style={{ cursor: "pointer" }}>
+          <a
+            onClick={() => goToSection("jobs")}
+            style={{ cursor: "pointer" }}
+          >
             Find Jobs
           </a>
         </li>
@@ -117,21 +146,44 @@ export default function Navbar() {
         </li>
 
         <li>
-          <a onClick={() => goToSection("contact")} style={{ cursor: "pointer" }}>
+          <a
+            onClick={() => goToSection("contact")}
+            style={{ cursor: "pointer" }}
+          >
             Contact
           </a>
         </li>
 
+        {/* MOBILE LOGIN BUTTON */}
         {menuOpen && (
           <li>
-            <button className="login-btn" style={{ width: "100%", marginTop: "10px" }}>
+            <button
+              className="login-btn"
+              style={{ width: "100%", marginTop: "10px" }}
+              onClick={() => {
+                setMenuOpen(false);
+                navigate("/login");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
               Login
             </button>
           </li>
         )}
       </ul>
 
-      {!menuOpen && <button className="login-btn">Login</button>}
+      {/* DESKTOP LOGIN BUTTON */}
+      {!menuOpen && (
+        <button
+          className="login-btn"
+          onClick={() => {
+            navigate("/login");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          Login
+        </button>
+      )}
     </nav>
   );
 }

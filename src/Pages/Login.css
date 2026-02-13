@@ -1,0 +1,281 @@
+/* ===============================
+   GLOBAL
+================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ===============================
+   MAIN LAYOUT
+================================= */
+.login-page {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+/* Background Image */
+.background-layer {
+  position: absolute;
+  inset: 0;
+  background: url("/login-bg.jpg") no-repeat center center;
+  background-size: 40%;
+  opacity: 0.12;
+  z-index: 0;
+}
+
+/* ===============================
+   SECTIONS
+================================= */
+.left-section,
+.right-section {
+  flex: 1 1 50%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===============================
+   LEFT SECTION
+================================= */
+.company-content {
+  text-align: center;
+  max-width: 420px;
+}
+
+.company-logo {
+  width: 200px;
+  max-width: 80%;
+  margin-bottom: 20px;
+}
+
+.company-content h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.company-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* ===============================
+   RIGHT SECTION
+================================= */
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 35px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h2 {
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.login-box p {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ===============================
+   ROLE TOGGLE
+================================= */
+.role-toggle {
+  display: flex;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.role-toggle button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: #f1f5f9;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.role-toggle button.active {
+  background: #2563eb;
+  color: white;
+}
+
+/* ===============================
+   INPUTS
+================================= */
+form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  outline: none;
+}
+
+form input:focus {
+  border-color: #2563eb;
+}
+
+/* ===============================
+   PASSWORD
+================================= */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  padding-right: 45px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #64748b;
+}
+
+/* ===============================
+   OPTIONS
+================================= */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;   /* vertically center */
+  gap: 8px;
+  cursor: pointer;
+  white-space: nowrap;   /* prevent text wrapping */
+}
+
+.remember-me input {
+  width: 16px;
+  height: 16px;
+  margin: 0;             /* remove default spacing */
+  cursor: pointer;
+}
+
+
+.forgot {
+  color: #2563eb;
+  cursor: pointer;
+}
+
+/* ===============================
+   BUTTON
+================================= */
+.login-btn-1 {
+  width: 100%;
+  padding: 12px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn-1:hover {
+  background: #1d4ed8;
+}
+
+/* ===============================
+   SIGNUP
+================================= */
+.signup-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signup-text span {
+  color: #2563eb;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ===============================
+   TABLET
+================================= */
+@media (max-width: 992px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    flex: 1 1 100%;
+    min-height: auto;
+    padding: 40px 20px;
+  }
+
+  .background-layer {
+    background-size: 60%;
+  }
+}
+
+/* ===============================
+   MOBILE
+================================= */
+@media (max-width: 600px) {
+
+  .company-logo {
+    width: 130px;
+  }
+
+  .company-content h1 {
+    font-size: 26px;
+  }
+
+  .company-content p {
+    font-size: 14px;
+  }
+
+  .login-box {
+    padding: 25px;
+  }
+
+  .login-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .background-layer {
+    background-size: 80%;
+  }
+}
