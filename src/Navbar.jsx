@@ -153,13 +153,11 @@ export default function Navbar() {
             Contact
           </a>
         </li>
-
-        {/* MOBILE LOGIN BUTTON */}
-        {menuOpen && (
-          <li>
-            <button
-              className="login-btn"
-              style={{ width: "100%", marginTop: "10px" }}
+        <li>
+          <Link
+              to="/Login"
+              className="login-btn-1"
+              style={{ textAlign:"center",padding:"10px" }}
               onClick={() => {
                 setMenuOpen(false);
                 navigate("/login");
@@ -167,9 +165,10 @@ export default function Navbar() {
               }}
             >
               Login
-            </button>
-          </li>
-        )}
+            </Link>
+        </li>
+
+        {/* MOBILE LOGIN BUTTON */}
       </ul>
 
       {/* DESKTOP LOGIN BUTTON */}
