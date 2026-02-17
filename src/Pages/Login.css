@@ -212,16 +212,16 @@
 }
 
 /* RESPONSIVE */
-/* RESPONSIVE */
 @media (max-width: 900px) {
   .login-page {
     flex-direction: column;
+    margin: 80px 20px;
   }
 
   .left-section {
     display: flex;        /* ✅ show again */
     width: 100%;
-    min-height: 35vh;
+    min-height: 45vh;
     padding: 30px 20px;
   }
 
@@ -230,7 +230,9 @@
   }
 
   .company-logo {
-    width: 60px;
+  width: 60px;
+  width: 120px;
+  margin-bottom: 5px;
   }
 
   .company-content h1 {
@@ -252,3 +254,5 @@
     border-radius: 50px;
   }
 }
+
+
