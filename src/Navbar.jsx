@@ -154,35 +154,22 @@ export default function Navbar() {
           </a>
         </li>
         <li>
-          <Link
-              to="/Login"
-              className="login-btn-1"
-              style={{ textAlign:"center",padding:"10px" }}
-              onClick={() => {
-                setMenuOpen(false);
-                navigate("/login");
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-            >
-              Login
-            </Link>
-        </li>
-
-        {/* MOBILE LOGIN BUTTON */}
-      </ul>
-
-      {/* DESKTOP LOGIN BUTTON */}
-      {!menuOpen && (
-        <button
+          
+        <Link
+          to="/login"
           className="login-btn"
+          style={{textAlign:"center" , padding:"5px 18px" , width:"100%" , color:"white"}}
           onClick={() => {
-            navigate("/login");
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
+              setMenuOpen(false);
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
         >
           Login
-        </button>
-      )}
+        </Link>
+      
+        </li>
+      </ul>
+
     </nav>
   );
 }
