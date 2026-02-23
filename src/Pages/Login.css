@@ -5,9 +5,7 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   position: relative;
   overflow: hidden;
-  margin: 100px 50px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 2);
-  border-radius: 50px;
+
 }
 
 /* BLURRED BACKGROUND LAYER */
@@ -215,7 +213,7 @@
 @media (max-width: 900px) {
   .login-page {
     flex-direction: column;
-    margin: 80px 20px;
+
   }
 
   .left-section {
@@ -246,13 +244,13 @@
   .right-section {
     width: 100%;
     min-height: 65vh;
-    padding: 20px;
+    padding: 30px;
   }
 
   .login-box {
     max-width: 100%;
     border-radius: 50px;
+    padding: 20px 50px;
+    line-height: 30px;
   }
 }
-
-

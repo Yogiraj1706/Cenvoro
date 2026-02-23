@@ -1,8 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
-
-
 import Navbar from "./Navbar";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
@@ -21,20 +19,26 @@ function App() {
 
   const location = useLocation();
 
-useEffect(() => {
-  if (location.state?.scrollTo) {
-    const section = document.getElementById(location.state.scrollTo);
 
-    if (section) {
-      setTimeout(() => {
-        section.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }, 100);
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const section = document.getElementById(location.state.scrollTo);
+
+      if (section) {
+        setTimeout(() => {
+          section.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 100);
+      }
     }
-  }
-}, [location]);
+  }, [location]);
+
+  // ✅ Hide footer logic
+  const hideFooter =
+    location.pathname === "/login" ||
+    location.pathname.startsWith("/services");
 
 
   return (
@@ -62,14 +66,15 @@ useEffect(() => {
           <Route path="/services/institutes" element={<Institute />} />
           <Route path="/services/employers" element={<Employers />} />
 
-          
+
 
           <Route path="/hiretalent" element={<HireTalent />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       </div>
 
-      <Footer />
+      {/* ✅ Footer will hide automatically */}
+      {!hideFooter && <Footer />}
     </>
   );
 }

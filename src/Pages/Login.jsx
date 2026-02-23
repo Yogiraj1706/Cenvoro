@@ -21,10 +21,9 @@ function Login() {
   };
 
   return (
+    
     <div className="login-page">
-
-      {/* Blurred Center Logo */}
-      <div className="background-layer"></div>
+      
 
 
       {/* LEFT SIDE */}
@@ -113,6 +112,7 @@ function Login() {
       </div>
 
     </div>
+  
   );
 }
 
