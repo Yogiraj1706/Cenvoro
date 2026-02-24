@@ -5,55 +5,51 @@ function Candidates() {
     const navigate = useNavigate();
 
     useEffect(() => {
+    window.scrollTo(0, 0);
 
+    let hasScrolled = false;
 
-        window.scrollTo(0, 0);
+    const handleFirstScroll = () => {
+        hasScrolled = true;
+        window.removeEventListener("scroll", handleFirstScroll);
+    };
 
-        const handleScroll = () => {
-            const elements = document.querySelectorAll(".animate-content");
+    window.addEventListener("scroll", handleFirstScroll);
 
-            elements.forEach((el) => {
-                const rect = el.getBoundingClientRect();
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting && hasScrolled) {
 
-                if (rect.top < window.innerHeight - 120) {
-                    el.classList.add("show");
+                    const parent = entry.target;
+                    const items = parent.querySelectorAll(
+                        ".animate-content, .animate-item, .animate-image"
+                    );
+
+                    items.forEach((el, index) => {
+                        setTimeout(() => {
+                            el.classList.add("show");
+                        }, index * 200); // one-by-one speed
+                    });
+
+                    observer.unobserve(parent);
                 }
             });
-        };
+        },
+        {
+            threshold: 0.25,
+        }
+    );
 
-        // Run once AFTER small delay (so nothing appears instantly)
-        setTimeout(() => {
-            handleScroll();
-        }, 400);
+    const sections = document.querySelectorAll(".service-detail-content");
 
-        window.addEventListener("scroll", handleScroll);
+    sections.forEach((section) => observer.observe(section));
 
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-
-        const items = document.querySelectorAll(".animate-item");
-
-        const revealItems = () => {
-            items.forEach((item, index) => {
-                const rect = item.getBoundingClientRect();
-
-                if (rect.top < window.innerHeight - 100) {
-                    setTimeout(() => {
-                        item.classList.add("show");
-                    }, index * 250); // 👈 controls speed (bigger = slower)
-                }
-            });
-        };
-
-        window.addEventListener("scroll", revealItems);
-
-        // nothing appears until scroll
-        return () => window.removeEventListener("scroll", revealItems);
-    }, []);
-
+    return () => {
+        observer.disconnect();
+        window.removeEventListener("scroll", handleFirstScroll);
+    };
+}, []);
 
 
     return (

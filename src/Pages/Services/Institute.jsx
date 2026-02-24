@@ -5,76 +5,50 @@ function Institute() {
     const navigate = useNavigate();
 
     useEffect(() => {
+    window.scrollTo(0, 0);
 
+    let hasScrolled = false;
 
-        window.scrollTo(0, 0);
+    const handleFirstScroll = () => {
+        hasScrolled = true;
+        window.removeEventListener("scroll", handleFirstScroll);
+    };
 
-        const handleScroll = () => {
-            const elements = document.querySelectorAll(".animate-content");
+    window.addEventListener("scroll", handleFirstScroll);
 
-            elements.forEach((el) => {
-                const rect = el.getBoundingClientRect();
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting && hasScrolled) {
 
-                if (rect.top < window.innerHeight - 120) {
-                    el.classList.add("show");
+                    const parent = entry.target;
+                    const items = parent.querySelectorAll(
+                        ".animate-content, .animate-item, .animate-image"
+                    );
+
+                    items.forEach((el, index) => {
+                        setTimeout(() => {
+                            el.classList.add("show");
+                        }, index * 200); // one-by-one speed
+                    });
+
+                    observer.unobserve(parent);
                 }
             });
-        };
+        },
+        {
+            threshold: 0.25,
+        }
+    );
 
-        // Run once AFTER small delay (so nothing appears instantly)
-        setTimeout(() => {
-            handleScroll();
-        }, 400);
+    const sections = document.querySelectorAll(".service-detail-content");
 
-        window.addEventListener("scroll", handleScroll);
+    sections.forEach((section) => observer.observe(section));
 
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-useEffect(() => {
-  window.scrollTo(0, 0);
-
-  const firstList = document.querySelectorAll(".animate-list")[0];
-  const secondList = document.querySelectorAll(".animate-list")[1];
-
-  if (!firstList || !secondList) return;
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        // FIRST LIST animation
-        const firstItems = firstList.querySelectorAll(".animate-item");
-
-        firstItems.forEach((item, index) => {
-          setTimeout(() => {
-            item.classList.add("show");
-          }, index * 350);
-        });
-
-        // AFTER first list finishes → animate second list
-        const totalTime = firstItems.length * 350 + 200;
-
-        setTimeout(() => {
-          const secondItems = secondList.querySelectorAll(".animate-item");
-
-          secondItems.forEach((item, index) => {
-            setTimeout(() => {
-              item.classList.add("show");
-            }, index * 350);
-          });
-        }, totalTime);
-
-        observer.disconnect(); // run once
-      });
-    },
-    { threshold: 0.35 }
-  );
-
-  observer.observe(firstList);
-
-  return () => observer.disconnect();
+    return () => {
+        observer.disconnect();
+        window.removeEventListener("scroll", handleFirstScroll);
+    };
 }, []);
 
 
