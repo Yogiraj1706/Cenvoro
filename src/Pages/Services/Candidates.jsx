@@ -96,7 +96,7 @@ function Candidates() {
                     padding: "10px 20px"
                 }}
             >
-                <h2 className="heading animate-content" style={{ margin: "5px", textAlign: "center", }
+                <h2 className="heading animate-content show" style={{ margin: "5px", textAlign: "center", }
                 }>
                     Our Services
                 </h2>
