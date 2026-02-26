@@ -4,25 +4,13 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   position: relative;
   overflow: hidden;
-  
-
 }
 
-/* LEFT SECTION */
-.left-section {
-  flex: 1;
-  background: linear-gradient(135deg, #adacac, #e6e5e5,#adacac);
-  color: rgb(0, 0, 0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  z-index: 1;
-}
 
 .company-content {
   max-width: 420px;
   text-align: center;
+  z-index: 1;
 }
 
 .company-logo {
@@ -39,7 +27,7 @@
 .company-content p {
   opacity: 0.9;
   line-height: 1.6;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* RIGHT SECTION */
@@ -49,7 +37,6 @@
   align-items: center;
   justify-content: center;
   padding: 40px;
-  background: rgb(107, 203, 235);
   z-index: 1;
 }
 
@@ -61,6 +48,7 @@
   padding: 35px;
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
 .login-box h2 {
@@ -205,10 +193,7 @@
     flex-direction: column;
   }
 
-  /* ❌ Hide left section on mobile */
-  .left-section {
-    display: none;
-  }
+  
 
   /* ✅ Full width login form */
   .right-section {
@@ -218,6 +203,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color:rgb(209, 208, 208);
+    
   }
 
   .login-box {
@@ -225,5 +212,75 @@
     border-radius: 20px;
     padding: 25px;
     line-height: normal;
+    margin-top: -100px;
+  }
+}
+
+.left-section {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffffff, #ffffff, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* dots layer */
+.left-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 10px 10px, rgba(94, 93, 95, 0.7) 6px, transparent 9px),
+    radial-gradient(circle at 0px 0px, rgba(0, 0, 0, 0.18) 2px, transparent 2px);
+
+  background-size: 22px 22px;
+
+  /* fade left → right */
+  mask-image: linear-gradient(to right, black 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 20%, transparent 100%);
+
+  pointer-events: none;
+}
+
+.right-section {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+
+}
+
+/* dots layer */
+.right-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 10px 10px,rgba(6, 112, 250, 0.56) 6px, transparent 9px),
+    radial-gradient(circle at 0px 0px, rgba(255,255,255,0.35) 2px, transparent 2px);
+
+  background-size: 22px 22px;
+
+  /* fade right → left */
+  mask-image: linear-gradient(to left, black 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to left, black 50%, transparent 100%);
+
+  pointer-events: none;
+}
+
+@media (max-width: 900px){
+
+  /* ❌ Hide left section on mobile */
+  .left-section {
+    display: none;
   }
 }
