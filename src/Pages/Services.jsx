@@ -34,7 +34,7 @@ function Services() {
   return (
     <section className="services" id="services">
       <div className="container">
-        <h2 className="section-title">Our Services</h2>
+        <h2 className="section-title" style={{color:"white"}}>Our Services</h2>
 
         <>
           {/* Candidates */}
@@ -128,3 +128,4 @@ function Services() {
 }
 
 export default Services;
+
