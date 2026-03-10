@@ -318,47 +318,9 @@ body {
 .about {
   position: relative;
   padding: 60px 80px;
-  overflow: hidden;
- 
-  min-height: 100vh;
+  overflow: hidden; 
+  
 
-  background:
-  radial-gradient(circle at center, #1aa6a0 0%, #157f86 35%, #1677ac 70%, #3b7ee9 100%);
-}
-
-
-/* Large abstract shapes */
-
-.about::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background:
-  radial-gradient(circle at 85% 15%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.15) 25%, transparent 30%),
-  radial-gradient(circle at 20% 20%, rgba(255,255,255,0.12) 0%, transparent 35%),
-  radial-gradient(circle at 35% 80%, rgba(255,255,255,0.12) 0%, transparent 35%);
-
-  pointer-events: none;
-}
-
-
-/* diagonal line texture */
-
-.about::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background-image: repeating-linear-gradient(
-    115deg,
-    rgba(255,255,255,0.07) 0px,
-    rgba(255,255,255,0.07) 1px,
-    transparent 1px,
-    transparent 6px
-  );
-
-  opacity: 0.5;
 }
 
 
@@ -493,13 +455,6 @@ body {
 /* ------------------------------
    Services Section Styling
 ------------------------------ */
-
-.services {
-  margin-top: 90px;
-  padding: 60px 60px;
-  position: relative;
-
-}
 
 .services h2 {
   margin-top: 60px;
@@ -752,13 +707,7 @@ body {
   position: relative;
   padding: 60px 20px;
   background: #f8f9fc; 
-  background: repeating-linear-gradient(
-    45deg,
-    rgba(0, 0, 0, 0.08),
-    rgba(0, 0, 0, 0.08) 4px,
-    transparent 35px,
-    transparent 14px
-  );
+ 
 }
 
 .section-title {
@@ -2191,14 +2140,14 @@ footer p {
   background: #f8f9fd;
   margin-top: 0px;
   background:
-  radial-gradient(circle at 75% 30%, rgba(70,120,255,0.9), transparent 45%),
-  radial-gradient(circle at 20% 80%, rgba(60,90,200,0.7), transparent 50%),
-  radial-gradient(circle at 10% 20%, rgba(70,20,120,0.8), transparent 50%),
-  linear-gradient(135deg, #140a2f, #2b3e8f);
+  linear-gradient(135deg, #02023f, #2b3e8f);
+  margin-top: 90px;
+  padding: 60px 60px;
+  position: relative;
+  
 
   color: white;
 
-  
 }
 
 /* ===============================
@@ -2493,133 +2442,3 @@ footer p {
     opacity: 0;
   }
 }
-
-
-.heading {
-  text-align: center;
-  color: #ffffff;
-  font-size: 35px;
-  font-weight: 700;
-  margin-bottom: 50px;
-  position: relative;
-   font-family: 'Montserrat', sans-serif;
-}
-
-.heading::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #ffffff;
-  margin: 10px auto 0;
-  border-radius: 10px;
-}
-
-.contact{
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-  background:#1c97c6;
-}
-
-/* top right wave */
-.contact::before{
-  content:"";
-  position:absolute;
-  top:-120px;
-  right:-150px;
-  width:650px;
-  height:650px;
-
-  background: radial-gradient(circle at 30% 30%, #00e0d6, #0068ff);
-  border-radius:60% 40% 70% 30% / 40% 60% 40% 60%;
-  transform: rotate(25deg);
-  opacity:0.9;
-}
-
-/* bottom wave */
-.contact::after{
-  content:"";
-  position:absolute;
-  bottom:-250px;
-  left:-200px;
-  width:900px;
-  height:600px;
-
-  background: linear-gradient(120deg,#00e0d6,#0068ff);
-  border-radius:60% 40% 60% 40%;
-  transform: rotate(-20deg);
-}
-
-
-/* curved white line */
-
-.contact .curve-line{
-  position:absolute;
-  bottom:120px;
-  left:-200px;
-  width:1400px;
-  height:300px;
-
-  border-top:3px solid rgba(255,255,255,0.7);
-  border-radius:60% 40% 0 0;
-}
-
-
-/* striped circles */
-
-.contact .striped-circle{
-  position:absolute;
-  width:120px;
-  height:120px;
-  border-radius:50%;
-
-  background: repeating-linear-gradient(
-    45deg,
-    rgba(255,255,255,0.7),
-    rgba(255,255,255,0.7) 2px,
-    transparent 2px,
-    transparent 8px
-  );
-}
-
-.contact .circle1{
-  left:260px;
-  top:300px;
-}
-
-.contact .circle2{
-  right:300px;
-  bottom:200px;
-}
-
-
-/* dot grids */
-
-.contact .dot-grid{
-  position:absolute;
-  width:80px;
-  height:80px;
-
-  background-image: radial-gradient(white 2px, transparent 2px);
-  background-size:16px 16px;
-}
-
-.contact .grid1{
-  top:80px;
-  right:120px;
-}
-
-.contact .grid2{
-  bottom:60px;
-  left:80px;
-}
-
-
-/* keep content above background */
-
-.contact .container{
-  position:relative;
-  z-index:2;
-}
-
