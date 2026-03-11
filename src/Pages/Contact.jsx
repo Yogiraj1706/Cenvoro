@@ -70,6 +70,7 @@ function Contact() {
 
   return (
     <section className="contact" id="contact">
+      
       <div className="container">
         <h2
           className="section-title"
@@ -77,6 +78,7 @@ function Contact() {
             fontFamily: "Montserrat, sans-serif",
             fontSize: "24px",
             fontWeight: 700,
+            
           }}
         >
           Get In Touch
