@@ -319,8 +319,6 @@ body {
   position: relative;
   padding: 60px 80px 160px 80px;
   overflow: hidden; 
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 
@@ -699,8 +697,6 @@ body {
 .contact {
   position: relative;
   padding: 60px 20px;
-  
-  margin-bottom: 20px;
 }
 
 .section-title {
@@ -738,20 +734,15 @@ body {
 
 .contact-info h3 {
   font-size: 22px;
-  color: #033a8c;
-  font-weight: 700;
+  color: #ffffff;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
 .contact-info p {
-  color: #555;
-  margin-bottom: 25px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 30px;
+  color: #ffffff;
+  margin-bottom: 45px;
+  font-weight: 600;
 }
 
 .contact-icon {
@@ -769,13 +760,13 @@ body {
 
 .contact-details h4 {
   font-size: 18px;
-  color: #033a8c;
+  color: #ffffff;
   margin-bottom: 3px;
   font-weight: 600;
 }
 
 .contact-details p {
-  color: #444;
+  color: #ffffff;
   line-height: 1.5;
 }
 
@@ -1961,6 +1952,7 @@ footer p {
   display: flex;
   align-items: center;
   gap: 10px; /* small space between icon and text */
+  margin: 30px;
 }
 
 .contact-icon i {
@@ -1969,7 +1961,7 @@ footer p {
 }
 
 .contact-icon:hover {
-  background: #0d6efd;   /* same hover background */
+  background: #1d0250;   /* same hover background */
   cursor: pointer;
   transform: translateY(-5px);
   transition: 0.3s ease; /* smooth effect */
@@ -2039,18 +2031,13 @@ footer p {
   line-height: 1.6;
 }
 
-.contact-item {
-  display: flex;
-  align-items: flex-start;   /* aligns icon with the heading */
-  gap: 16px;
-  margin: 60px 0;
-}
+
 
 .contact-icon {
   min-width: 50px;
   min-height: 50px;
-  background: rgba(40, 102, 255, 0.1);
-  color: #0a57d0;
+  background: rgba(61, 43, 224, 0.781);
+  color: #ffffff;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -2120,7 +2107,6 @@ footer p {
 .services {
   padding: 80px 10;
   background: #f8f9fd;
-  margin-bottom: 20px;
   background:
   linear-gradient(135deg, #02023f, #2b3e8f);
 
@@ -2430,7 +2416,7 @@ footer p {
 .about{
   position: relative;
   overflow: hidden;
-  background:#1c97c6;
+  background:#4ab6e0;
 }
 
 /* top right wave */
@@ -2456,9 +2442,9 @@ footer p {
   left:-200px;
   width:900px;
   height:600px;
-  background: linear-gradient(120deg,#00e0d6,#0068ff);
+  background: linear-gradient(130deg,#07f3e7,#5992e7);
   border-radius:60% 40% 60% 40%;
-  transform: rotate(-20deg);
+  transform: rotate(-10deg);
 }
 
 
@@ -2533,45 +2519,44 @@ footer p {
   z-index:2;
 }
 
-
+/* CONTACT SECTION */
 .contact {
   position: relative;
-  padding: 60px 20px;
-  
-  background: linear-gradient(135deg, #19eee3, #0f8bd6);
+
+  padding: 80px 20px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Top Right Soft Circle */
-.contact::before {
+/* BLUR BACKGROUND IMAGE */
+.contact::before{
   content: "";
   position: absolute;
-  top: -150px;
-  right: -150px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(255,255,255,0.35), transparent 70%);
-  border-radius: 50%;
+  inset: 0;
+
+  background-image: url("/public/Contact-bg.jpeg"); /* change path */
+  background-size: cover;
+  background-position: center;
+
+  filter: blur(1px) brightness(0.7);
+  transform: scale(1.1);
+
+  z-index: 0;
 }
 
-/* Bottom Left Circle */
-.contact::after {
-  content: "";
-  position: absolute;
-  bottom: -150px;
-  left: -150px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(255,255,255,0.25), transparent 70%);
-  border-radius: 50%;
+/* DARK OVERLAY (optional but looks professional) */
+.contact::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(27, 91, 230, 0.35);
+  z-index:1;
 }
 
-/* Optional small pattern dots */
-.contact .pattern {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(rgba(255,255,255,0.2) 2px, transparent 2px);
-  background-size: 40px 40px;
-  opacity: 0.3;
+/* CONTENT ABOVE IMAGE */
+.contact .container{
+  position: relative;
+  z-index: 2;
 }

@@ -70,7 +70,7 @@ function Contact() {
 
   return (
     <section className="contact" id="contact">
-      
+
       <div className="container">
         <h2
           className="section-title"
@@ -78,7 +78,8 @@ function Contact() {
             fontFamily: "Montserrat, sans-serif",
             fontSize: "24px",
             fontWeight: 700,
-            
+            color:"white"
+
           }}
         >
           Get In Touch
@@ -169,21 +170,21 @@ function Contact() {
               </div>
               <div className="form-group">
                 <label htmlFor="email">Mobile No.</label>
-              <input
-                type="text"
-                inputMode="numeric"
-                pattern="[0-9]*"
-                id="mobile"
-                name="mobile"
-                className="form-control"
-                required
-                value={formData.mobile}
-                onChange={(e) => {
-                  const value = e.target.value.replace(/[^0-9]/g, "");
-                  setFormData({ ...formData, mobile: value });
-                }}
-                maxLength="10"
-              />
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  id="mobile"
+                  name="mobile"
+                  className="form-control"
+                  required
+                  value={formData.mobile}
+                  onChange={(e) => {
+                    const value = e.target.value.replace(/[^0-9]/g, "");
+                    setFormData({ ...formData, mobile: value });
+                  }}
+                  maxLength="10"
+                />
               </div>
 
 
