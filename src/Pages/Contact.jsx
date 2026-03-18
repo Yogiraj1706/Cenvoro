@@ -76,7 +76,7 @@ function Contact() {
           className="section-title"
           style={{
             fontFamily: "Montserrat, sans-serif",
-            fontSize: "24px",
+            fontSize: "28px",
             fontWeight: 700,
             color:"white"
 

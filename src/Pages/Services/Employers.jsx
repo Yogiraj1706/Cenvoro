@@ -96,7 +96,10 @@ function Employers() {
                     padding: "10px 20px"
                 }}
             >
-            <h2 className="heading animate-content show" style={{ margin: "5px" }}>Our Services</h2>
+            <h2 className="heading animate-content show underline-heading" style={{ margin: "5px", textAlign: "center", fontSize:"35px"}
+                }>
+                    Our Services
+                </h2>
             <div className="service-detail">
                 <div className="service-detail-content">
                     <h2 className="animate-content">For Employers - Recruitment & Training</h2>
