@@ -137,7 +137,7 @@ function Footer() {
 
         <div className="footer-divider"></div>
 
-        <p>© 2025 CENVORO. All rights reserved.</p>
+        <p>© 2026 CENVORO. All rights reserved.</p>
       </div>
     </footer>
   );

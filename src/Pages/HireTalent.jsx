@@ -6,32 +6,32 @@ import { MuiTelInput } from "mui-tel-input";
 function HireTalent() {
 
     function FormSection({ title, children, defaultOpen = false }) {
-  const [open, setOpen] = useState(defaultOpen);
+        const [open, setOpen] = useState(defaultOpen);
 
-  return (
-    <div className="form-section">
-      <div
-        className="section-header"
-        onClick={() => setOpen(!open)}
-        style={{
-          cursor: "pointer",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          margin: "25px 0 10px",
-          fontWeight: "600",
-          fontSize: "18px",
-          color: "rgb(3,58,140)",
-        }}
-      >
-        <span>{title}</span>
-        <span>{open ? "▲" : "▼"}</span>
-      </div>
+        return (
+            <div className="form-section">
+                <div
+                    className="section-header"
+                    onClick={() => setOpen(!open)}
+                    style={{
+                        cursor: "pointer",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        margin: "25px 0 10px",
+                        fontWeight: "600",
+                        fontSize: "18px",
+                        color: "rgb(3,58,140)",
+                    }}
+                >
+                    <span>{title}</span>
+                    <span>{open ? "▲" : "▼"}</span>
+                </div>
 
-      {open && <div className="section-content">{children}</div>}
-    </div>
-  );
-}
+                {open && <div className="section-content">{children}</div>}
+            </div>
+        );
+    }
     const [phone, setPhone] = useState("");
     const [error, setError] = useState("");
     const [file, setFile] = useState(null);
@@ -181,7 +181,7 @@ function HireTalent() {
                                 <input type="email" placeholder="your.email@company.com" />
                             </div>
 
-                              <div className="form-group">
+                            <div className="form-group">
                                 <label>Phone</label>
                                 <MuiTelInput
                                     value={phone}
@@ -203,82 +203,87 @@ function HireTalent() {
 
                             {/* ===== Job Details ===== */}
 
-                             <FormSection title="Job Details">
-                <div className="form-group">
-                  <label>Position to Fill</label>
-                  <input type="text" />
-                </div>
+                            <FormSection title="Job Details">
+                                <div className="form-group">
+                                    <label>Position to Fill</label>
+                                    <input type="text" />
+                                </div>
 
-                <div className="form-group">
-                  <label>Number of Positions</label>
-                  <input type="number" min="1" />
-                </div>
+                                <div className="form-group">
+                                    <label>Number of Positions</label>
+                                    <input type="number" min="1" />
+                                </div>
 
-                <div className="form-group">
-                  <label>Employment Type</label>
-                  <select>
-                    <option>Full-time</option>
-                    <option>Part-time</option>
-                    <option>Contract</option>
-                    <option>Internship</option>
-                  </select>
-                </div>
+                                <div className="form-group">
+                                    <label>Employment Type</label>
+                                    <select required>
+                                        <option value="" disabled selected hidden>Select job type</option>
+                                        <option value="full-time">Full-time</option>
+                                        <option value="part-time">Part-time</option>
+                                        <option value="contract">Contract</option>
+                                        <option value="internship">Internship</option>
+                                    </select>
+                                </div>
 
-                <div className="form-group">
-                  <label>Experience Level</label>
-                  <select>
-                    <option>Fresher</option>
-                    <option>1 Year</option>
-                    <option>2 Years</option>
-                    <option>3 Years</option>
-                    <option>4 Years</option>
-                    <option>5 Years</option>
-                    <option>Senior</option>
-                  </select>
-                </div>
+                                <div className="form-group">
+                                    <label>Experience Level</label>
+                                    <select>
+                                        <option value="" disabled selected hidden></option>
+                                        <option>Fresher</option>
+                                        <option>1 Year</option>
+                                        <option>2 Years</option>
+                                        <option>3 Years</option>
+                                        <option>4 Years</option>
+                                        <option>5 Years</option>
+                                        <option>Senior</option>
+                                    </select>
+                                </div>
 
-                <div className="form-group">
-                  <label>Work Mode</label>
-                  <select>
-                    <option>Onsite</option>
-                    <option>Remote</option>
-                    <option>Hybrid</option>
-                  </select>
-                </div>
+                                <div className="form-group">
+                                    <label>Work Mode</label>
+                                    <select>
+                                        <option value="" disabled selected hidden>Select work mode</option>
+                                        <option>Onsite</option>
+                                        <option>Remote</option>
+                                        <option>Hybrid</option>
+                                    </select>
+                                </div>
 
-                <div className="form-group">
-                  <label>Location</label>
-                  <input type="text" />
-                </div>
-              </FormSection>
-                          
+                                <div className="form-group">
+                                    <label>Location</label>
+                                    <input type="text" />
+                                </div>
+                            </FormSection>
+
 
                             {/* ===== Compensation & Timeline ===== */}
 
                             <FormSection title="Compensation & Timeline">
-                <div className="form-group">
-                  <label>Salary Range</label>
-                  <input type="text" placeholder="₹6–10 LPA" />
-                </div>
+                                <div className="form-group">
+                                    <label>Salary Range</label>
+                                    <input type="text" placeholder="₹6–10 LPA" />
+                                </div>
 
-                <div className="form-group">
-                  <label>Urgency</label>
-                  <select>
-                    <option>Immediate</option>
-                    <option>Within 1 Month</option>
-                    <option>Flexible</option>
-                  </select>
-                </div>
+                                <div className="form-group">
+                                    <label>Urgency</label>
+                                    <select>
+                                        <option value="" disabled selected hidden></option>
+                                        <option>Immediate</option>
+                                        <option>Within 1 Month</option>
+                                        <option>Flexible</option>
+                                    </select>
+                                </div>
 
-                <div className="form-group">
-                  <label>Joining Timeline</label>
-                  <select>
-                    <option>Within 15 Days</option>
-                    <option>Within 30 Days</option>
-                    <option>1–3 Months</option>
-                  </select>
-                </div>
-              </FormSection>
+                                <div className="form-group">
+                                    <label>Joining Timeline</label>
+                                    <select>
+                                        <option value="" disabled selected hidden></option>
+                                        <option>Within 15 Days</option>
+                                        <option>Within 30 Days</option>
+                                        <option>1–3 Months</option>
+                                    </select>
+                                </div>
+                            </FormSection>
 
 
                             {/* ===== Requirements ===== */}

@@ -99,7 +99,7 @@ function Login() {
           </form>
 
           <p className="signup-text">
-            Don’t have an account?{" "}
+            Don't have an account?{" "}
             <span
               onClick={() =>
                 navigate(role === "recruiter" ? "/recruiter-signup" : "/signup")

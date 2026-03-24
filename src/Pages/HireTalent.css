@@ -512,3 +512,139 @@ footer {
   background: #ff4d4f;
   color: #fff;
 }
+
+/* ================= MOBILE FIXES ================= */
+
+/* Fix input overflow issue */
+
+/* Button group fix */
+.submit-btn,
+.cancel-btn {
+  width: 100%;
+  text-align: center;
+}
+
+/* Small Tablets & Large Phones */
+@media (max-width: 768px) {
+
+  .hire-form-card h2 {
+    font-size: 22px;
+  }
+
+  .form-group label {
+    font-size: 14px !important;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .cancel-btn {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+/* Standard Mobile (Android/iPhone) */
+@media (max-width: 480px) {
+
+  .hire-form-wrapper {
+    padding: 40px 12px;
+  }
+
+  .hire-form-card {
+    padding: 20px 14px;
+    border-radius: 14px;
+  }
+
+  .hire-form-card h2 {
+    font-size: 20px;
+  }
+
+  .form-group label {
+    font-size: 13px !important;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .submit-btn {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .cancel-btn {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+/* Small Phones (like 360px width) */
+@media (max-width: 360px) {
+
+  .hire-form-card {
+    padding: 16px 10px;
+  }
+
+  .hire-form-card h2 {
+    font-size: 18px;
+  }
+
+  .form-group label {
+    font-size: 12px !important;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 11px;
+    padding: 8px;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+/* Extra Small Phones (320px - old devices) */
+@media (max-width: 320px) {
+
+  .hire-form-card {
+    padding: 14px 8px;
+  }
+
+  .hire-form-card h2 {
+    font-size: 16px;
+  }
+
+  .form-group label {
+    font-size: 11px !important;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 10px;
+    padding: 7px;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    font-size: 11px;
+    padding: 8px;
+  }
+}

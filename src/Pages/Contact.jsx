@@ -91,7 +91,7 @@ function Contact() {
             <h3>Contact Information</h3>
             <p>Reach out to us for any inquiries or to learn more about our services.</p>
 
-            <a href="mailto:connect@hirecenvoro.com" style={{ textDecoration: "none", color: "inherit" }}>
+            <a href="mailto:connect@hirecenvoro.com" style={{ textDecoration: "none", color: "inherit",}}>
               <div className="contact-item">
                 <div className="contact-icon">
                   <i className="fas fa-envelope"></i>

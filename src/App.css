@@ -719,16 +719,17 @@ body {
 }
 
 .contact-info h3 {
-  font-size: 22px;
+  font-size: 32px;
   color: #ffffff;
-  font-weight: 600;
-  margin-bottom: 10px;
+  font-weight: 640;
+  margin-bottom: 20px;
 }
 
 .contact-info p {
   color: #ffffff;
-  margin-bottom: 45px;
+  margin-bottom: 55px;
   font-weight: 600;
+  font-size: 20px;
 }
 
 .contact-icon {
@@ -975,6 +976,15 @@ footer {
   color: white;
   font-size: 16px;
   transition: 0.3s ease;
+  
+}
+
+.social-icons a,
+.social-icons a:link,
+.social-icons a:visited,
+.social-icons a:hover,
+.social-icons a:active {
+  text-decoration: none !important;
 }
 
 .social-links a:hover {
@@ -1938,7 +1948,7 @@ footer p {
   display: flex;
   align-items: center;
   gap: 10px; /* small space between icon and text */
-  margin: 30px;
+  margin-bottom: 50px;
 }
 
 .contact-icon i {
@@ -2018,7 +2028,6 @@ footer p {
 }
 
 
-
 .contact-icon {
   min-width: 50px;
   min-height: 50px;
@@ -2033,14 +2042,14 @@ footer p {
 
 .contact-details h4 {
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
 }
 
 .contact-details p {
   margin: 14px 0 0 0;
   line-height: 1.4;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 /* Mobile View */
