@@ -135,7 +135,7 @@ function Employers() {
 
                 <div className="service-detail-image animate-image">
                     <img 
-                        src="/public/Candidate.jpeg" 
+                        src="/Candidate.jpeg" 
                         alt="Recruitment Solutions" 
                     />
                 </div>
