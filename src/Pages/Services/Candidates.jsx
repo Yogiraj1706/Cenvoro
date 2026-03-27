@@ -148,7 +148,7 @@ function Candidates() {
 
                     <div className="service-detail-image animate-image" style={{ zIndex: "0" }}>
                         <img
-                            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80"
+                            src="/public/Candidatesimage.jpeg"
                             alt="Career Growth"
                         />
                     </div>

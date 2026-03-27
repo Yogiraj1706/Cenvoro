@@ -137,7 +137,7 @@ function Institute() {
 
                 <div className="service-detail-image animate-image">
                     <img
-                        src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=80"
+                        src="/public/Institutes.jpeg"
                         alt="Institute Partnerships"
                     />
                 </div>

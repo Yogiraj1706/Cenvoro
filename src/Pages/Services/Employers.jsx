@@ -135,7 +135,7 @@ function Employers() {
 
                 <div className="service-detail-image animate-image">
                     <img 
-                        src="https://img.freepik.com/free-photo/guy-shows-document-girl-group-young-freelancers-office-have-conversation-working_146671-13569.jpg?t=st=1721564726~exp=1721568326~hmac=0c8d4d6c6c9e6a5a5b5c5d5e5f5a5b5c5d5e5f5a5b5c5d5e5f5a5b5c5d5e5f5a&amp;w=1380" 
+                        src="/public/Candidate.jpeg" 
                         alt="Recruitment Solutions" 
                     />
                 </div>
