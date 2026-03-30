@@ -5,70 +5,70 @@ function Candidates() {
     const navigate = useNavigate();
 
     useEffect(() => {
-    window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
 
-    let hasScrolled = false;
+        let hasScrolled = false;
 
-    const handleFirstScroll = () => {
-        hasScrolled = true;
-        window.removeEventListener("scroll", handleFirstScroll);
-    };
+        const handleFirstScroll = () => {
+            hasScrolled = true;
+            window.removeEventListener("scroll", handleFirstScroll);
+        };
 
-    window.addEventListener("scroll", handleFirstScroll);
+        window.addEventListener("scroll", handleFirstScroll);
 
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting && hasScrolled) {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && hasScrolled) {
 
-                    const parent = entry.target;
-                    const items = parent.querySelectorAll(
-                        ".animate-content, .animate-item, .animate-image"
-                    );
+                        const parent = entry.target;
+                        const items = parent.querySelectorAll(
+                            ".animate-content, .animate-item, .animate-image"
+                        );
 
-                    items.forEach((el, index) => {
-                        setTimeout(() => {
-                            el.classList.add("show");
-                        }, index * 200); // one-by-one speed
-                    });
+                        items.forEach((el, index) => {
+                            setTimeout(() => {
+                                el.classList.add("show");
+                            }, index * 200); // one-by-one speed
+                        });
 
-                    observer.unobserve(parent);
-                }
-            });
-        },
-        {
-            threshold: 0.25,
-        }
-    );
+                        observer.unobserve(parent);
+                    }
+                });
+            },
+            {
+                threshold: 0.25,
+            }
+        );
 
-    const sections = document.querySelectorAll(".service-detail-content");
+        const sections = document.querySelectorAll(".service-detail-content");
 
-    sections.forEach((section) => observer.observe(section));
+        sections.forEach((section) => observer.observe(section));
 
-    return () => {
-        observer.disconnect();
-        window.removeEventListener("scroll", handleFirstScroll);
-    };
-}, []);
+        return () => {
+            observer.disconnect();
+            window.removeEventListener("scroll", handleFirstScroll);
+        };
+    }, []);
 
 
     return (
-     <section
-  style={{
-    position: "relative",
-    overflow: "hidden",
-    minHeight: "100vh",
+        <section
+            style={{
+                position: "relative",
+                overflow: "hidden",
+                minHeight: "100vh", 
 
-    /* Professional textured gradient */
-    background:
-      `
+                /* Professional textured gradient */
+                background:
+                    `
       radial-gradient(circle at 20% 20%, rgba(255,255,255,0.06) 0%, transparent 40%),
       radial-gradient(circle at 80% 0%, rgba(255,255,255,0.05) 0%, transparent 40%),
       radial-gradient(circle at 0% 80%, rgba(255,255,255,0.05) 0%, transparent 40%),
       linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)
       `,
-  }}
->
+            }}
+        >
 
             {/* Main Content */}
             <div
@@ -78,7 +78,7 @@ function Candidates() {
                     padding: "10px 20px"
                 }}
             >
-                <h2 className="heading animate-content show underline-heading" style={{ margin: "5px", textAlign: "center", fontSize:"35px"}
+                <h2 className="heading animate-content show underline-heading" style={{ margin: "5px", textAlign: "center", fontSize: "35px" }
                 }>
                     Our Services
                 </h2>
@@ -97,7 +97,7 @@ function Candidates() {
                         <ul className="benefits-list animate-list animate-content">
                             <li className="animate-item"><i className="fas fa-check" style={{ color: "white" }}></i>Access to opportunities across industries and MNCs</li>
                             <li className="animate-item"><i className="fas fa-check" style={{ color: "white" }}></i>Resume building & interview preparation support</li>
-                            <li className="animate-item"><i className="fas fa-check"  style={{ color: "white" }}></i>Skill development and mentorship programs designed to match industry expectations </li>
+                            <li className="animate-item"><i className="fas fa-check" style={{ color: "white" }}></i>Skill development and mentorship programs designed to match industry expectations </li>
                         </ul>
 
                         <h3 className="animate-content">Key Benefits:</h3>
