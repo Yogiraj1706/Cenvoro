@@ -57,37 +57,20 @@ function Employers() {
             style={{
                 position: "relative",
                 overflow: "hidden",
-                minHeight: "100vh"
+                minHeight: "100vh",
+
+                background: `
+repeating-linear-gradient(
+  135deg,
+  rgba(255,255,255,0.05) 0px,
+  rgba(255,255,255,0.05) 2px,
+  transparent 2px,
+  transparent 14px
+),
+linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)
+`
             }}
         >
-            {/* Blurred Background */}
-            <div
-                style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    backgroundImage:
-                        "url('https://img.freepik.com/free-photo/guy-shows-document-girl-group-young-freelancers-office-have-conversation-working_146671-13569.jpg?t=st=1721564726~exp=1721568326~hmac=0c8d4d6c6c9e6a5a5b5c5d5e5f5a5b5c5d5e5f5a5b5c5d5e5f5a5b5c5d5e5f5a&amp;w=1380')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    filter: "blur(12px)",
-                    transform: "scale(1.1)",
-                    zIndex: 0
-                }}
-            />
-
-            {/* Dark overlay */}
-            <div
-                style={{
-                    position: "absolute",
-                    inset: 0,
-                    backgroundColor: "rgba(0,0,0,0.3)",
-                    zIndex: 1
-                }}
-            />
-
             {/* Main Content */}
             <div
                 style={{

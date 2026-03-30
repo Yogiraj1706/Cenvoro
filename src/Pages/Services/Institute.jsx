@@ -58,36 +58,16 @@ function Institute() {
             style={{
                 position: "relative",
                 overflow: "hidden",
-                minHeight: "100vh"
+                minHeight: "100vh",
+
+                background: `
+conic-gradient(from 45deg at 50% 50%, rgba(255,255,255,0.04) 0deg 90deg, transparent 90deg 360deg),
+linear-gradient(135deg, #232526 0%, #414345 100%)
+`,
+backgroundSize: "60px 60px"
             }}
         >
-            {/* Blurred Background */}
-            <div
-                style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    backgroundImage:
-                        "url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=80')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    filter: "blur(12px)",
-                    transform: "scale(1.1)",
-                    zIndex: 0
-                }}
-            />
-
-            {/* Dark overlay */}
-            <div
-                style={{
-                    position: "absolute",
-                    inset: 0,
-                    backgroundColor: "rgba(0,0,0,0.3)",
-                    zIndex: 1
-                }}
-            />
+            
 
             {/* Main Content */}
             <div

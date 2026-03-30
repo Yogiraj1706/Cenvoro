@@ -53,40 +53,22 @@ function Candidates() {
 
 
     return (
-        <section
-            style={{
-                position: "relative",
-                overflow: "hidden",
-                minHeight: "100vh"
-            }}
-        >
-            {/* Blurred Background */}
-            <div
-                style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    backgroundImage:
-                        "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    filter: "blur(12px)",
-                    transform: "scale(1.1)",
-                    zIndex: 0
-                }}
-            />
+     <section
+  style={{
+    position: "relative",
+    overflow: "hidden",
+    minHeight: "100vh",
 
-            {/* Dark overlay */}
-            <div
-                style={{
-                    position: "absolute",
-                    inset: 0,
-                    backgroundColor: "rgba(0,0,0,0.3)",
-                    zIndex: 1
-                }}
-            />
+    /* Professional textured gradient */
+    background:
+      `
+      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 80% 0%, rgba(255,255,255,0.05) 0%, transparent 40%),
+      radial-gradient(circle at 0% 80%, rgba(255,255,255,0.05) 0%, transparent 40%),
+      linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)
+      `,
+  }}
+>
 
             {/* Main Content */}
             <div
