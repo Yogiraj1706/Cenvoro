@@ -41,7 +41,7 @@ function About() {
       <section className="about" id="about">
 
         <div className="container">
-          <h2 className="section-title">About CENVORO</h2>
+          <h2 className="section-title" style={{color:"white"}}>About CENVORO</h2>
 
           <div className="about-content">
             {/* LEFT TEXT */}
@@ -73,7 +73,7 @@ function About() {
             {/* RIGHT IMAGE */}
             <div className="about-image">
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80"
+                src="/public/About-5.jpeg"
                 alt="CENVORO Team"
               />
             </div>
