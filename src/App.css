@@ -2031,8 +2031,8 @@ footer p {
 .contact-icon {
   min-width: 50px;
   min-height: 50px;
-  background: rgba(138, 127, 245, 0.884);
-  color: #ffffff;
+  background: rgb(255, 255, 255);
+  color: #1d04fc;
   border-radius: 50%;
   display: flex;
   justify-content: center;
