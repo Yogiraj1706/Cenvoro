@@ -73,7 +73,7 @@ function Services() {
           >
             <div className="service-circle animate-img">
               <img
-                src="/Institute.jpeg"
+                src="/Institutes.jpeg"
                 alt="Institute Partnership"
                 className="service-circle-image"
 
@@ -100,7 +100,7 @@ function Services() {
           <div className="service-row">
             <div className="service-circle animate-img">
               <img
-                src="/Employee.jpeg"
+                src="/Employers.jpeg"
                 alt="Institute Partnership"
                 className="service-circle-image"
               />
