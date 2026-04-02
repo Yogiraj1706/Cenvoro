@@ -735,7 +735,7 @@ body {
 .contact-icon {
   min-width: 50px;
   min-height: 50px;
-  background: rgba(71, 122, 250, 0.1);
+  background: rgba(1, 10, 31, 0.1);
   color: #0a57d0;
   border-radius: 50%;
   display: flex;
@@ -2031,7 +2031,7 @@ footer p {
 .contact-icon {
   min-width: 50px;
   min-height: 50px;
-  background: rgba(101, 84, 255, 0.781);
+  background: rgba(138, 127, 245, 0.884);
   color: #ffffff;
   border-radius: 50%;
   display: flex;
