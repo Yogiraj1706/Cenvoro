@@ -73,7 +73,7 @@ function About() {
             {/* RIGHT IMAGE */}
             <div className="about-image">
               <img
-                src="/public/About-5.jpeg"
+                src="/About-5.jpeg"
                 alt="CENVORO Team"
               />
             </div>
