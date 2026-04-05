@@ -2103,7 +2103,7 @@ footer p {
   padding: 80px 10;
   background: #f8f9fd;
   background:
-  linear-gradient(135deg, #02023f, #2b3e8f);
+  linear-gradient(135deg, #060620, #081241);
 
   padding: 60px 60px;
   position: relative;
@@ -2231,7 +2231,6 @@ footer p {
   transform: translateX(0);
 }
 
-
 /* ===== MAIN DETAIL LAYOUT ===== */
 .service-detail {
   display: flex;
@@ -2343,8 +2342,6 @@ footer p {
   }
 }
 
-/*Service details animation */
-
 /* Content hidden initially */
 .animate-content {
   opacity: 0;
@@ -2420,17 +2417,10 @@ footer p {
   content: "";
   position: absolute;
   inset: 0;
-
-  background-image: url("/public/contact-1.jpg"); /* change path */
-  background-size: cover;
-  background-position: center;
-
-  filter: blur(4.8px) brightness(0.8);
-  transform: scale(1.1);
-
+  background-image: url("/public/Contact-bg.png");
+  filter: blur(1px);
   z-index: 0;
 }
-
 
 /* CONTENT ABOVE IMAGE */
 .contact .container{
