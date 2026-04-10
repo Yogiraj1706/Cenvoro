@@ -60,7 +60,7 @@ function Footer() {
             <div className="social-icons">
               <a href="#" style={{backgroundColor:"blue", color:"white"}}><i className="fab fa-facebook-f"></i></a>
               <a href="#" style={{backgroundColor:"white",color:"black"}}><i className="fab fa-x-twitter"></i></a>
-              <a href="https://www.linkedin.com/company/cenvoro/" style={{backgroundColor:"blue",color:"white"}}><i className="fab fa-linkedin-in"></i></a>
+              <a href="https://www.linkedin.com/company/cenvoro/" style={{backgroundColor:"#0c70d4",color:"white"}}><i className="fab fa-linkedin-in"></i></a>
               <a href="#" style={{backgroundColor:"#f00a72",color:"white"}}><i className="fab fa-instagram"></i></a>
             </div>
           </div>
