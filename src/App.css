@@ -905,7 +905,7 @@ textarea.form-control {
 /*****************************************************************************************************************/
 
 footer {
-  background: #0b4da2;
+  background: #010f22;
   color: white;
   padding: 60px 0 20px;
   margin-top: 60px;
@@ -1065,12 +1065,12 @@ footer p {
 .social-icons a {
   width: 40px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.15);
+  background:white;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  color: white;
+  
   font-size: 18px;
   transition: 0.3s ease;
 }
@@ -2186,6 +2186,7 @@ footer p {
       rgba(4, 9, 30, 0.92),
       rgba(7, 22, 60, 0.92)),
     url("/public/bg-1.jpeg");
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2506,8 +2507,14 @@ footer p {
   content: "";
   position: absolute;
   inset: 0;
-  background-image:url(/public/CONTACT.png);
-   background-size: cover;
+  
+  background:
+    linear-gradient(120deg,
+      rgba(4, 9, 30, 0.92),
+      rgba(7, 22, 60, 0.92)),
+    url("/public/bg-1.jpeg");
+
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
