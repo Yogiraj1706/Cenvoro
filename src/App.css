@@ -2500,33 +2500,12 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* BLUR BACKGROUND IMAGE */
-.contact::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  
-  background:
-    linear-gradient(120deg,
-      rgba(4, 9, 30, 0.92),
-      rgba(7, 22, 60, 0.92)),
-    url("/public/bg-1.jpeg");
-
+  background-image: url(/public/Exam-2.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  z-index: 0;
 }
 
-/* CONTENT ABOVE IMAGE */
-.contact .container {
-  position: relative;
-  
-  z-index: 2;
-}
 
 .underline-heading::after {
   content: "";
@@ -2541,14 +2520,7 @@ footer p {
 
 /* ABOUT SECTION BACKGROUND */
 .about {
-  margin: 1px 0px;
-  /* texture + gradient overlay */
-  background:
-    linear-gradient(120deg,
-      rgba(4, 9, 30, 0.92),
-      rgba(7, 22, 60, 0.92)),
-    url("/public/bg-1.jpeg");
-
+  background-image: url(/public/Exam-2.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

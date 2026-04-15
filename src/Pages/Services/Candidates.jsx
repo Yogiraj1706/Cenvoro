@@ -59,12 +59,13 @@ function Candidates() {
     position: "relative",
     overflow: "hidden",
     minHeight: "100vh",
-    backgroundImage: `
-      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.06) 0%, transparent 40%),
-      radial-gradient(circle at 80% 0%, rgba(255,255,255,0.05) 0%, transparent 40%),
-      radial-gradient(circle at 0% 80%, rgba(255,255,255,0.05) 0%, transparent 40%),
-      linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)
-    `,
+    background: `linear-gradient(120deg,
+        rgba(4, 9, 30, 0.92),
+        rgba(7, 22, 60, 0.92)),
+        url("/bg-1.jpeg")`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat"
     
   }}
 >
