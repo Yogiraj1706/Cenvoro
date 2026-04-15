@@ -78,7 +78,7 @@ function Contact() {
             fontFamily: "Montserrat, sans-serif",
             fontSize: "28px",
             fontWeight: 700,
-            color:"white"
+            color:"#2b2b2b"
 
           }}
         >

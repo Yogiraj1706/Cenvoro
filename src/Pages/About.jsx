@@ -41,7 +41,7 @@ function About() {
       <section className="about" id="about">
 
         <div className="container">
-          <h2 className="section-title" style={{color:"white"}}>About CENVORO</h2>
+          <h2 className="section-title" style={{color:"#2b2b2b"}}>About CENVORO</h2>
 
           <div className="about-content">
             {/* LEFT TEXT */}
