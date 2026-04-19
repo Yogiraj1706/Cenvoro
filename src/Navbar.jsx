@@ -96,10 +96,7 @@ export default function Navbar() {
       </div>
 
       {/* NAV LINKS */}
-      <ul
-        className={`nav-center ${menuOpen ? "open" : ""}`}
-        ref={menuRef}
-      >
+      <ul className={`nav-center mobile-menu ${menuOpen ? "open" : ""}`} ref={menuRef}>
         <li>
           <a onClick={goHome} style={{ cursor: "pointer" }}>
             Home
