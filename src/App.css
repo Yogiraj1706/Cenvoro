@@ -2676,7 +2676,7 @@ footer p {
   }
 
   /* button size */
-  .btn-primary {
+  .services btn-primary {
     width: 170px !important;
     padding: 10px 16px;
     font-size: 14px;
